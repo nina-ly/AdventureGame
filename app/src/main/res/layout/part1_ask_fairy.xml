@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/forest"
+    >
+
+    <!--
+    [ask it what it’s doing here] “Well I was stowing away in your cart which obviously was not a good idea but now I’m just trying to get home like you guess we should travel together”
+    [Say ok]
+    [just start walking] -->
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:text="You: What are you doing here?"/>
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ok" />
+
+    <Button
+        android:id="@+id/startWalkingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ignore and continue walking"/>
+
+</RelativeLayout>

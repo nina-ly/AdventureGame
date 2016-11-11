@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dark_path">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/small_globin"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/text1"
+        android:layout_alignRight="@+id/fairySays"
+        android:layout_alignEnd="@+id/fairySays" />
+
+    <ImageView
+        android:id="@+id/fairy"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/blue_fairy"
+        android:layout_below="@+id/fairySays"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+         />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="As you are walking down the path, you come across a small goblin pushing his cart."
+        android:id="@+id/text1"
+        android:autoText="true"
+        android:layout_above="@+id/runAwayButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/fairySays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fairy: Why don't you ask him for directions?"/>
+
+    <Button
+        android:id="@+id/runAwayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run away"
+        android:layout_above="@+id/sayHelloButton"
+        android:layout_alignLeft="@+id/attackButton"
+        android:layout_alignStart="@+id/attackButton" />
+
+    <Button
+        android:id="@+id/sayHelloButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Say hello"
+        android:layout_above="@+id/attackButton"
+        android:layout_alignLeft="@+id/attackButton"
+        android:layout_alignStart="@+id/attackButton" />
+
+    <Button
+        android:id="@+id/attackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Attack him"/>
+
+</RelativeLayout>
