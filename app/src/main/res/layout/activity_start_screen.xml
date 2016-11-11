@@ -11,8 +11,6 @@
     android:background="@drawable/title_background"
     tools:context="com.example.ninaly.adventuregame453.StartScreen">
 
-
-
     <ImageView
         android:src="@drawable/logo_temp"
         android:layout_width="wrap_content"
