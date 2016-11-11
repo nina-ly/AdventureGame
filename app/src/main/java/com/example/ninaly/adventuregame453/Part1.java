@@ -20,7 +20,7 @@ public class Part1 extends Activity {
         swingButton = (Button) findViewById(R.id.swing);
         askButton = (Button) findViewById(R.id.ask);
 
-        textView.setText("The merchant starts walking along the road. Suddenly, a tornado picks " +
+        textView.setText("You are the merchant. You start walking along the road. Suddenly, a tornado picks " +
                 "him up and throws him into the middle of the forest. When the dust finally " +
                 "clears, he sees that he's surrounded by broken carts. Then, he hears a voice, " +
                 "'Wow, that was a doozy'. A blue figure with wings appears...");
