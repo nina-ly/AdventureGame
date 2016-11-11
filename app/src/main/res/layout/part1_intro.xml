@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/forest"
+    tools:context="com.example.ninaly.adventuregame453.Part1">
+
+
+    <!-- Merchant walking along the road, suddenly a tornado picks him up and throws him into the middle of the forest. When the smoke clears and he’s sitting surrounded by his broken cart he hears a voice. “Wow that was a doozy” a blue light with wings appears on the screen
+    [take a swing at it]
+    [ask it what it’s doing here] -->
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"/>
+
+    <Button
+        android:id="@+id/swing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shoo it away"/>
+
+    <Button
+        android:id="@+id/ask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ask what they are doing here"/>
+
+</RelativeLayout>

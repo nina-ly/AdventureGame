@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/forest" >
+
+    <!--
+    [take a swing at it] “hey what’s that for I’m not harmful”
+    [ask it what it’s doing here] evil points = 1 -->
+
+    <TextView
+        android:id="@+id/takeSwing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/askQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"/>
+
+    <Button
+        android:id="@+id/askButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ask"/>
+
+</RelativeLayout>
