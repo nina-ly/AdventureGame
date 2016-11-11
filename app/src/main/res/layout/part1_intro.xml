@@ -14,13 +14,21 @@
     <!-- Merchant walking along the road, suddenly a tornado picks him up and throws him into the middle of the forest. When the smoke clears and he’s sitting surrounded by his broken cart he hears a voice. “Wow that was a doozy” a blue light with wings appears on the screen
     [take a swing at it]
     [ask it what it’s doing here] -->
+    
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray"/>
+        android:background="@color/gray"
+        android:text="You are the merchant. You start walking along the road. Suddenly, a tornado picks
+        him up and throws him into the middle of the forest. When the dust finally clears, he sees that
+        he's surrounded by broken carts. Then, he hears a voice, 'Wow, that's a doozy'. A blue figure appears" />
 
+    <ImageButton
+        android:layout_width=""
+        android:layout_height="" />
+    
     <Button
         android:id="@+id/swing"
         android:layout_width="wrap_content"
