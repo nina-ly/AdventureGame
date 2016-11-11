@@ -11,10 +11,10 @@
     android:background="@drawable/ogrecave2"
     tools:context="com.example.ninaly.adventuregame453.Cave">
 
-    <ImageView
-        android:src="@drawable/hint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
         android:id="@+id/hint"
         android:layout_alignParentRight="true"
         android:onClick="onClick"
