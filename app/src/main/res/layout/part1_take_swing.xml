@@ -15,11 +15,20 @@
         android:layout_height="wrap_content"
         android:background="@color/gray"/>
 
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:id="@+id/hint"
+        android:onClick="onClick"
+        android:layout_alignParentRight="true" />
+
     <TextView
         android:id="@+id/askQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray"/>
+        android:background="@color/gray"
+        android:text="Hey! What's that for? I'm not harmful."/>
 
     <Button
         android:id="@+id/askButton"
