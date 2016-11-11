@@ -11,6 +11,8 @@ import android.widget.Toast;
 public class StartScreen extends Activity {
 
     public static final String progressData = "Progress_Data";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +20,6 @@ public class StartScreen extends Activity {
     }
 
     public void onNewGameClick(View view){
-        Intent startNewGame = new Intent(StartScreen.this, Part1.class);
-        startActivity(startNewGame);
         SharedPreferences points = getSharedPreferences(progressData, 0);
         SharedPreferences.Editor editor = points.edit();
 
@@ -29,13 +29,29 @@ public class StartScreen extends Activity {
         editor.putBoolean("sword", false);
         editor.putBoolean("emerald", false);
         editor.putInt("part", 1);
-        editor.putInt("storyProgress", 1);
+        editor.putInt("storyProgress", R.layout.part1_intro);
 
         editor.commit();
+
+        Intent startNewGame = new Intent(StartScreen.this, Part1.class);
+        startActivity(startNewGame);
     }
 
     public void onContinueClick(View view){
-        Toast.makeText(StartScreen.this,"Continue click", Toast.LENGTH_SHORT).show();
+        SharedPreferences points = getSharedPreferences(progressData, 0);
+        Intent resumeGame;
+        if(points.getInt("part",1) == 1){
+            resumeGame = new Intent(StartScreen.this, Part1.class);
+            startActivity(resumeGame);
+        }else if (points.getInt("part",1) == 2){
+            resumeGame = new Intent(StartScreen.this, Cave.class);
+            startActivity(resumeGame);
+
+        }else{
+            resumeGame = new Intent(StartScreen.this, Part3Castle.class);
+            startActivity(resumeGame);
+
+        }
 
     }
 
