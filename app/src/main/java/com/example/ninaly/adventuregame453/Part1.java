@@ -28,7 +28,7 @@ public class Part1 extends Activity {
         swingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
             }
         });
 
