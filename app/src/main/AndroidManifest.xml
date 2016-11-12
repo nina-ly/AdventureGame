@@ -17,8 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cave" >
-        </activity>
+        <activity android:name=".Part1" ></activity>
+        <activity android:name=".Cave" ></activity>
+        <activity android:name=".Part3Castle"></activity>
     </application>
 
 </manifest>
