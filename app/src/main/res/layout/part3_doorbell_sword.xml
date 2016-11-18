@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/ogrecave2"
+    tools:context="com.example.ninaly.adventuregame453.Cave">
+
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:id="@+id/hint"
+        android:layout_alignParentRight="true"
+        android:onClick="onClick"
+        />
+
+    <ImageView
+        android:src="@drawable/emerald"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emerald"
+        android:layout_alignTop="@+id/text"
+        android:layout_alignBottom="@+id/text"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:text="Who’s there? Go away! first someone steals my emerald then a tornado destroys the my kingdom what next!"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:paddingTop="210dp"
+        android:paddingBottom="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show him the hero's sword"
+        android:id="@+id/showSword"
+        android:layout_gravity="bottom"
+        android:onClick="onClick"
+        android:layout_below="@+id/text"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Threaten"
+        android:id="@+id/threaten"
+        android:onClick="onClick"
+        android:layout_below="@+id/showSword" />
+</RelativeLayout>
