@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/forest" >
+
+    <!--
+    [just start walking] “Hey wait for me!” *goes into the top corner (button with a picture) *
+    [Forked Road] -->
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hey! Wait for me!"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:textAlignment="center"
+        android:paddingTop="250dp"
+        android:paddingBottom="10dp" />
+
+
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:id="@+id/hint"
+        android:onClick="onClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/okButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ok"
+        android:onClick="onClick"
+        android:layout_below="@+id/text1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
