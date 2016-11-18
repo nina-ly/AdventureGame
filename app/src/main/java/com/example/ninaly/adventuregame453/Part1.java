@@ -116,6 +116,13 @@ public class Part1 extends Activity {
                 setContentView(R.layout.part1_run_away_from_goblin);
                 break;
 
+            // From part1_dark_path.xml
+            case R.id.sayHelloButton:
+                setContentView(R.layout.part1_say_hello);
+                break;
+
+
+
         } //end switch
     } //end onClick
 
