@@ -5,19 +5,38 @@
     android:layout_height="match_parent"
     android:background="@drawable/sunny_path">
 
+
     <TextView
-        android:id="@+id/takeSwing"
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="As you are walking down the forest,
-        you see some caves in the distance..."
-        />
+        android:text="As you are walking down the forest, you see some caves in the distance..."
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:paddingTop="250dp"
+        android:paddingBottom="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:id="@+id/hint"
+        android:onClick="onClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/part2Button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click here to continue"/>
+        android:text="Click here to continue"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

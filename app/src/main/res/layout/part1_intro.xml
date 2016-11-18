@@ -43,17 +43,18 @@
         android:text="Shoo it away"
         android:textAlignment="center"
         android:onClick="onClick"
-        android:layout_below="@+id/ask"
+        android:layout_below="@+id/ask1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/ask"
+        android:id="@+id/ask1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="Ask what they are doing here"
         android:onClick="onClick"
+        android:textSize="14sp"
         android:layout_below="@+id/text1"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

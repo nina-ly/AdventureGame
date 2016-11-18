@@ -9,31 +9,37 @@
     [take a swing at it] “hey what’s that for I’m not harmful”
     [ask it what it’s doing here] evil points = 1 -->
 
-    <TextView
-        android:id="@+id/takeSwing"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gray"/>
-
     <ImageButton
         android:background="@drawable/blue_fairy"
         android:layout_width = "100dp"
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:onClick="onClick"
-        android:layout_alignParentRight="true" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/askQuestion"
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray"
+        android:textColor="@color/white"
+        android:layout_centerVertical="true"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:paddingTop="250dp"
+        android:paddingBottom="10dp"
         android:text="Hey! What's that for? I'm not harmful."/>
 
     <Button
-        android:id="@+id/askButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/ask2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ask"/>
+        android:textAlignment="center"
+        android:text="Ask what they are doing here"
+        android:onClick="onClick"
+        android:layout_below="@+id/text1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="48dp" />
 
 </RelativeLayout>
