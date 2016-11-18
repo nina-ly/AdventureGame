@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:screenOrientation="portrait"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -15,7 +16,7 @@
         android:background="@drawable/blue_fairy"
         android:layout_width = "100dp"
         android:layout_height= "100dp"
-        android:id="@+id/hint"
+        android:id="@+id/hint3"
         android:layout_alignParentRight="true"
         android:onClick="onClick"
         />
@@ -44,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Keep Sneaking"
-        android:id="@+id/button1"
+        android:id="@+id/keepsneaking"
         android:layout_gravity="bottom"
         android:onClick="onClick"
         android:layout_below="@+id/text"/>
@@ -53,15 +54,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Attack Ogre"
-        android:id="@+id/button2"
+        android:id="@+id/attackogre"
         android:onClick="onClick"
-        android:layout_below="@+id/button1" />
+        android:layout_below="@+id/keepsneaking" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Give Up"
-        android:id="@+id/button3"
+        android:id="@+id/giveup"
         android:onClick="onClick"
-        android:layout_below="@+id/button2" />
+        android:layout_below="@+id/attackogre" />
 </RelativeLayout>

@@ -15,7 +15,7 @@
         android:background="@drawable/blue_fairy"
         android:layout_width = "100dp"
         android:layout_height= "100dp"
-        android:id="@+id/hint"
+        android:id="@+id/hint24"
         android:layout_alignParentRight="true"
         android:onClick="onClick"
         />
@@ -24,9 +24,9 @@
         android:src="@drawable/treasure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ogre"
-        android:layout_alignTop="@+id/text"
-        android:layout_alignBottom="@+id/text"
+        android:id="@+id/treasure"
+        android:layout_alignTop="@+id/text2"
+        android:layout_alignBottom="@+id/text2"
         android:layout_centerHorizontal="true"
         />
 
@@ -34,7 +34,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text"
+        android:id="@+id/text2"
         android:text="The door opens and you see a mountain of treasure."
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -46,10 +46,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go Back"
-        android:id="@+id/button1"
+        android:id="@+id/goback"
         android:layout_gravity="bottom"
         android:onClick="onClick"
-        android:layout_below="@+id/text" />
+        android:layout_below="@+id/text2" />
 
 
 </RelativeLayout>
