@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/ogrecave2"
+    android:background="@drawable/throneroom"
     tools:context="com.example.ninaly.adventuregame453.Cave">
 
     <ImageButton
@@ -21,25 +21,14 @@
         />
 
     <ImageView
-        android:src="@drawable/emerald"
+        android:src="@drawable/zelda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/emerald"
-        android:layout_alignTop="@+id/text"
-        android:layout_alignBottom="@+id/text"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/hint" />
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/text"
-        android:text="you pull out your sword and send out bloodlust you hear a noise behind you and block an attack before it separated your head from your body the princess"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:layout_centerVertical="true"
-        android:paddingTop="210dp"
-        android:paddingBottom="10dp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -48,7 +37,24 @@
         android:id="@+id/evilFight"
         android:layout_gravity="bottom"
         android:onClick="onClick"
-        android:layout_below="@+id/text"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:text="you pull out your sword and send out bloodlust you hear a noise behind you and block an attack before it separated your head from your body the princess"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_above="@+id/evilFight"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/black"
+        android:textAlignment="center" />
 
 
 </RelativeLayout>
