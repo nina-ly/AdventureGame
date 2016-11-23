@@ -25,15 +25,15 @@ public class StartScreen extends Activity {
 
         editor.putInt("points", 0);
         editor.putInt("evil-points", 0);
-        editor.putBoolean("lantern", false);
-        editor.putBoolean("sword", false);
+        editor.putBoolean("lantern", true);
+        editor.putBoolean("sword", true);
         editor.putBoolean("emerald", false);
         editor.putInt("part", 1);
         editor.putInt("storyProgress", R.layout.part1_intro);
 
         editor.commit();
 
-        Intent startNewGame = new Intent(StartScreen.this, Part1.class);
+        Intent startNewGame = new Intent(StartScreen.this, Cave.class);
         startActivity(startNewGame);
     }
 

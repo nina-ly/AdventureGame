@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:screenOrientation="portrait"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -15,7 +16,7 @@
         android:background="@drawable/blue_fairy"
         android:layout_width = "100dp"
         android:layout_height= "100dp"
-        android:id="@+id/hint"
+        android:id="@+id/hint10"
         android:layout_alignParentRight="true"
         android:onClick="onClick"
         />
@@ -45,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Check The Cave"
-        android:id="@+id/button1"
+        android:id="@+id/checkthecave"
         android:layout_gravity="bottom"
         android:onClick="onClick"
         android:layout_below="@+id/text"/>
@@ -54,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Leave"
-        android:id="@+id/button2"
+        android:id="@+id/leave"
         android:onClick="onClick"
-        android:layout_below="@+id/button1" />
+        android:layout_below="@+id/checkthecave" />
 </RelativeLayout>

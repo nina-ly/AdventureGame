@@ -2,6 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:screenOrientation="portrait"
+    android:id="@+id/dc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -15,7 +17,7 @@
         android:background="@drawable/blue_fairy"
         android:layout_width = "100dp"
         android:layout_height= "100dp"
-        android:id="@+id/hint"
+        android:id="@+id/hint12"
         android:layout_alignParentRight="true"
         android:onClick="onClick"
         />
@@ -23,7 +25,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text"
+        android:id="@+id/text1"
         android:text="Its dark you can’t see anything"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -35,17 +37,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go Back"
-        android:id="@+id/button1"
+        android:id="@+id/goback"
         android:layout_gravity="bottom"
         android:onClick="onClick"
-        android:layout_below="@+id/text"/>
+        android:layout_below="@+id/text1"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Travel Forward"
-        android:id="@+id/button2"
+        android:id="@+id/travelforward"
         android:onClick="onClick"
-        android:layout_below="@+id/button1" />
+        android:layout_below="@+id/goback" />
 
 </RelativeLayout>
