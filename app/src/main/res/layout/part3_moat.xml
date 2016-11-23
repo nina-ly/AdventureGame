@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/ogrecave2"
+    android:background="@drawable/castle"
     tools:context="com.example.ninaly.adventuregame453.Cave">
 
     <ImageButton
@@ -21,12 +21,12 @@
         />
 
     <ImageView
-        android:src="@drawable/emerald"
+        android:src="@drawable/crock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/emerald"
-        android:layout_alignTop="@+id/text"
-        android:layout_alignBottom="@+id/text"
+        android:layout_above="@+id/text"
+        android:layout_below="@+id/hint"
         android:layout_centerHorizontal="true" />
 
 
@@ -37,8 +37,12 @@
         android:text="The guard catches you and is yelling something you cant hear anything over the screams as the alligator rips your head from your body /n Game Over"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:layout_centerVertical="true"
-        android:paddingTop="210dp"
-        android:paddingBottom="10dp"/>
-\
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/black"
+        android:textAlignment="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    \
 </RelativeLayout>
