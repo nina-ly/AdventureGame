@@ -52,7 +52,7 @@ public class Cave extends Activity implements SensorEventListener {
         emerald = progressData.getBoolean("emerald", false);
         key = progressData.getBoolean("key", true);
         treasure = progressData.getBoolean("treasure", false);
-        setContentView(R.layout.cavebeginning);
+        setContentView(R.layout.part3_start);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         curTime = lastUpdate = (long) 0.0;
