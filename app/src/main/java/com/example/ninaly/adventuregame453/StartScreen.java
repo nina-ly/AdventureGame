@@ -33,7 +33,7 @@ public class StartScreen extends Activity {
 
         editor.commit();
 
-        Intent startNewGame = new Intent(StartScreen.this, Part3Castle.class);
+        Intent startNewGame = new Intent(StartScreen.this, Cave.class);
         startActivity(startNewGame);
     }
 

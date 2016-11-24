@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/throneroom"
+    android:background="@drawable/ogrecave2"
     tools:context="com.example.ninaly.adventuregame453.Cave">
 
     <ImageButton
@@ -20,25 +20,26 @@
         android:onClick="onClick"
         />
 
-
     <ImageView
-        android:src="@drawable/king"
+        android:src="@drawable/emerald"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/king"
-        android:layout_alignParentCenter="true"
-        android:layout_above="@+id/text"
-        android:layout_below="@+id/hint" />
+        android:id="@+id/emerald"
+        android:layout_alignTop="@+id/text"
+        android:layout_alignBottom="@+id/text"
+        android:layout_centerHorizontal="true" />
 
-    <Button
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ignore him"
-        android:id="@+id/ignore"
-        android:onClick="onClick"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/text"
+        android:text="You tell him of your struggle and he agrees to help but first he has something he wants to tell you "
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:paddingTop="210dp"
+        android:paddingBottom="10dp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -47,23 +48,13 @@
         android:id="@+id/listen"
         android:layout_gravity="bottom"
         android:onClick="onClick"
-        android:layout_above="@+id/ignore"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/text"/>
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
-
-        android:id="@+id/text"
-        android:text="You tell him of your struggle and he agrees to help but first he has something he wants to tell you "
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/listen"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/black"
-        android:textAlignment="center"/>
+        android:text="ignore him"
+        android:id="@+id/ignore"
+        android:onClick="onClick"
+        android:layout_below="@+id/listen" />
 </RelativeLayout>
