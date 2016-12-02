@@ -51,6 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Say hello"
+        android:onClick="onClick"
         android:layout_above="@+id/attackButton"
         android:layout_alignLeft="@+id/attackButton"
         android:layout_alignStart="@+id/attackButton" />
@@ -61,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:onClick="onClick"
         android:text="Attack him"/>
 
 </RelativeLayout>
