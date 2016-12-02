@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">AdventureGame453</string>
     <color name="gray">#e0e0d1</color>
-    <string name="hello">!@#@*%^!!!!!!???</string>
+    <string name="hello">Salutations, traveler! Are you in need of assistance?</string>
 </resources>
