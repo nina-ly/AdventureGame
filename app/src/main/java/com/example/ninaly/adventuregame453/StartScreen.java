@@ -24,7 +24,7 @@ public class StartScreen extends Activity {
         SharedPreferences.Editor editor = points.edit();
 
         editor.putInt("points", 0);
-        editor.putInt("evil-points", 0);
+        editor.putInt("evil-points", 5);
         editor.putBoolean("lantern", true);
         editor.putBoolean("sword", true);
         editor.putBoolean("emerald", true);
@@ -33,7 +33,7 @@ public class StartScreen extends Activity {
 
         editor.commit();
 
-        Intent startNewGame = new Intent(StartScreen.this, Cave.class);
+        Intent startNewGame = new Intent(StartScreen.this, Part1.class);
         startActivity(startNewGame);
 
     }
