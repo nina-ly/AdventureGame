@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dark_path">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You run away. You see a sword."
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/sword"
+        android:onClick="onImageClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="142dp"
+        android:id="@+id/swordInRock" />
+
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:id="@+id/runAwayFairy"
+        android:onClick="onImageClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/pullSwordButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pull sword"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="62dp" />
+
+</RelativeLayout>
