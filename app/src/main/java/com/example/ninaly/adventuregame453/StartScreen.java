@@ -27,7 +27,7 @@ public class StartScreen extends Activity {
         editor.putInt("evil-points", 0);
         editor.putBoolean("lantern", true);
         editor.putBoolean("sword", true);
-        editor.putBoolean("emerald", false);
+        editor.putBoolean("emerald", true);
         editor.putInt("part", 1);
         editor.putInt("storyProgress", R.layout.part1_intro);
 
@@ -35,6 +35,7 @@ public class StartScreen extends Activity {
 
         Intent startNewGame = new Intent(StartScreen.this, Cave.class);
         startActivity(startNewGame);
+
     }
 
     public void onContinueClick(View view){

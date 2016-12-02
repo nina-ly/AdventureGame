@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/ogrecave2"
+    android:background="@drawable/throneroom"
     tools:context="com.example.ninaly.adventuregame453.Cave">
 
     <ImageButton
@@ -21,13 +22,13 @@
         />
 
     <ImageView
-        android:src="@drawable/emerald"
+        android:src="@drawable/zeldamagic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/emerald"
-        android:layout_alignTop="@+id/text"
-        android:layout_alignBottom="@+id/text"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/text"
+        android:layout_alignParentTop="true"
+        />
 
 
     <TextView
@@ -37,9 +38,27 @@
         android:text="The King tells you about the magic that runs in their family and agrees to teach you one spell"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:layout_centerVertical="true"
-        android:paddingTop="210dp"
-        android:paddingBottom="10dp"/>
+        android:layout_above="@id/greenMagic"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/black"
+        android:textAlignment="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Red Magic"
+        android:id="@+id/redMagic"
+        android:onClick="onClick"
+        android:layout_above="@+id/blueMagic" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blue Magic"
+        android:id="@+id/blueMagic"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true" />
 
     <Button
         android:layout_width="match_parent"
@@ -48,21 +67,11 @@
         android:id="@+id/greenMagic"
         android:layout_gravity="bottom"
         android:onClick="onClick"
-        android:layout_below="@+id/text"/>
+        android:layout_above="@+id/redMagic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Red Magic"
-        android:id="@+id/redMagic"
-        android:onClick="onClick"
-        android:layout_below="@+id/greenMagic" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Blue Magic"
-        android:id="@+id/blueMagic"
-        android:onClick="onClick"
-        android:layout_below="@+id/redMagic" />
+
+
 </RelativeLayout>

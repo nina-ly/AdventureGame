@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/ogrecave2"
+    android:background="@drawable/throneroom"
     tools:context="com.example.ninaly.adventuregame453.Cave">
 
     <ImageButton
@@ -20,26 +20,16 @@
         android:onClick="onClick"
         />
 
-    <ImageView
-        android:src="@drawable/emerald"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/emerald"
-        android:layout_alignTop="@+id/text"
-        android:layout_alignBottom="@+id/text"
-        android:layout_centerHorizontal="true" />
 
-
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text"
-        android:text="we will give you 1000 gold coins "
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:layout_centerVertical="true"
-        android:paddingTop="210dp"
-        android:paddingBottom="10dp"/>
+        android:text="Accept"
+        android:id="@+id/endNoMagic"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
@@ -48,13 +38,36 @@
         android:id="@+id/tooMuchReward"
         android:layout_gravity="bottom"
         android:onClick="onClick"
-        android:layout_below="@+id/text"/>
+        android:layout_above="@+id/endNoMagic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Accept"
-        android:id="@+id/endNoMagic"
-        android:onClick="onClick"
-        android:layout_below="@+id/tooMuchReward" />
+        android:id="@+id/text"
+        android:text="we will give you 1000 gold coins "
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_above="@+id/tooMuchReward"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/black"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:src="@drawable/kingmoretreasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emerald"
+        android:layout_above="@+id/text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/gold"
+        android:layout_toLeftOf="@+id/gold"
+        android:layout_below="@+id/hint" />
+
+
 </RelativeLayout>
