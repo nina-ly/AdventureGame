@@ -1,6 +1,7 @@
 package com.example.ninaly.adventuregame453;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -35,6 +36,7 @@ public class Cave extends Activity implements SensorEventListener {
     private final static long UPDATEPERIOD = 300;
     private static final int SHAKE_THRESHOLD = 800;
     private boolean lit = false;
+    SharedPreferences progressData;
 
 
     //    int[] part2Layouts = {R.layout.cavebeginning, R.layout.ogrecave, R.layout.sneakaround, R.layout.keepsneaking, R.layout.attackogrewithsword, R.layout.keepattacking, R.layout.attackogrewithoutsword, R.layout.night,
@@ -43,7 +45,7 @@ public class Cave extends Activity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences progressData = getSharedPreferences(Data, 0);
+        progressData = getSharedPreferences(Data, 0);
         points = progressData.getInt("points", 0);
         evilPoints = progressData.getInt("evilPoints", 0);
         progress = progressData.getInt("storyProgress", 0);
@@ -52,7 +54,7 @@ public class Cave extends Activity implements SensorEventListener {
         emerald = progressData.getBoolean("emerald", false);
         key = progressData.getBoolean("key", true);
         treasure = progressData.getBoolean("treasure", false);
-        setContentView(R.layout.part3_start);
+        setContentView(R.layout.cavebeginning);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         curTime = lastUpdate = (long) 0.0;
@@ -111,7 +113,7 @@ public class Cave extends Activity implements SensorEventListener {
                     setContentView(R.layout.attackogrewithsword);
                 else
                     setContentView(R.layout.attackogrewithoutsword);
-                checkIfItsNight();
+                    checkIfItsNight();
                 break;
             case R.id.hint5:
                 Toast toast5 = Toast.makeText(this, "We're doing pretty well, lets keep going at it. -Fairy", Toast.LENGTH_LONG);
@@ -123,8 +125,8 @@ public class Cave extends Activity implements SensorEventListener {
                 checkIfItsNight();
                 break;
             case R.id.giveup:
-                setContentView(R.layout.attackogrewithoutsword);
-                checkIfItsNight();
+                setContentView(R.layout.regularcave);
+
                 break;
             case R.id.hint6:
                 Toast toast6 = Toast.makeText(this, "Oh no we have no choice but to fight without the sword. -Fairy", Toast.LENGTH_LONG);
@@ -323,9 +325,21 @@ public class Cave extends Activity implements SensorEventListener {
                 toast25.show();
                 break;
             case R.id.gotocastle:
-                /**
-                 * start part 3 activity
-                 */
+                SharedPreferences.Editor editor = progressData.edit();
+
+                editor.putInt("points", points);
+                editor.putInt("evil-points", evilPoints);
+                editor.putBoolean("lantern", lantern);
+                editor.putBoolean("sword", sword);
+                editor.putBoolean("emerald", emerald);
+                editor.putInt("part", 3);
+                editor.putInt("storyProgress", R.layout.part3_start);
+
+                editor.commit();
+
+                Intent startNewGame = new Intent(Cave.this, Part3Castle.class);
+                startActivity(startNewGame);
+                finish();
                 break;
             case R.id.gameover:
                 /**

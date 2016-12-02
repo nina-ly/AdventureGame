@@ -58,7 +58,7 @@
         android:textAlignment="center"/>
 
     <ImageView
-        android:src="@drawable/king"
+        android:src="@drawable/kingmoretreasure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/emerald"
@@ -67,23 +67,7 @@
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/gold"
         android:layout_toLeftOf="@+id/gold"
-        android:layout_alignTop="@+id/gold2" />
+        android:layout_below="@+id/hint" />
 
-    <ImageView
-        android:src="@drawable/treasure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gold"
-        android:layout_above="@+id/text"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
-    <ImageView
-        android:src="@drawable/treasure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gold2"
-        android:layout_below="@+id/hint"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 </RelativeLayout>
