@@ -15,22 +15,12 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ImageButton
-        android:background="@drawable/settings"
-        android:layout_width = "50dp"
-        android:layout_height= "50dp"
-        android:id="@+id/settingButton"
-        android:onClick="onImageClick"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hello"
         android:id="@+id/text1"
-        android:textSize="16sp"
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/white"
@@ -42,35 +32,30 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/small_globin"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="167dp"
-        android:id="@+id/imageView" />
+        android:layout_marginBottom="74dp"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/yesHelp"
+        android:layout_toLeftOf="@+id/spanishFairy"
+        android:layout_toStartOf="@+id/spanishFairy" />
 
     <Button
-        android:id="@+id/leaveButton"
+        android:id="@+id/yesHelp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Leave him because you do not understand"/>
+        android:text="Yes! We are trying to get home."
+        android:layout_above="@+id/attackHim"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/attackGoblin"
+        android:id="@+id/attackHim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Attack him"
-        android:layout_above="@+id/leaveButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/spanishFairy"
+        android:layout_alignEnd="@+id/spanishFairy" />
 
-    <Button
-        android:id="@+id/nodButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nod and point"
-        android:layout_above="@+id/attackGoblin"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>
