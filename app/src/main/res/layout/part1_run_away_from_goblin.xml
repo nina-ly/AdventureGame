@@ -5,6 +5,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/dark_path">
 
+    <!-- CURRENTLY NOT USED IN APP -->
+
+
     <TextView
         android:id="@+id/text1"
         android:layout_width="match_parent"

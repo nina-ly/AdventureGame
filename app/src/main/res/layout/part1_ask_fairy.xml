@@ -27,7 +27,6 @@
         android:layout_width = "100dp"
         android:layout_height= "100dp"
         android:id="@+id/hint"
-        android:onClick="onClick"
         android:layout_alignTop="@+id/text1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="73dp" />
