@@ -2,24 +2,90 @@ package com.example.ninaly.adventuregame453;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.Gravity;
+
+import java.lang.reflect.Array;
+import java.util.Random;
 
 public class Part1 extends Activity {
 
     int counter = 0;
 
+    public static final String Data = "Progress_Data";
+    int points, evilPoints, progress;
+    private boolean lantern, sword, emerald, key, treasure;
+    SharedPreferences progressData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.part1_intro);
+
+        progressData = getSharedPreferences(Data, 0);
+        points = progressData.getInt("points", 0);
+        evilPoints = progressData.getInt("evilPoints", 0);
+        progress = progressData.getInt("storyProgress", 0);
+        lantern = progressData.getBoolean("lantern", true);
+        sword = progressData.getBoolean("sword", true);
+        emerald = progressData.getBoolean("emerald", false);
+        key = progressData.getBoolean("key", true);
+        treasure = progressData.getBoolean("treasure", false);
+
+        setContentView(progress);
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    protected void onPause() {
+
+        SharedPreferences.Editor editor = progressData.edit();
+
+        editor.putInt("points", points);
+        editor.putInt("evil-points", evilPoints);
+        editor.putBoolean("lantern", lantern);
+        editor.putBoolean("sword", sword);
+        editor.putBoolean("emerald", emerald);
+        editor.putInt("part", 1);
+        editor.putInt("storyProgress", progress);
+
+        editor.commit();
+
+        super.onPause();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        SharedPreferences.Editor editor = progressData.edit();
+
+        editor.putInt("points", points);
+        editor.putInt("evil-points", evilPoints);
+        editor.putBoolean("lantern", lantern);
+        editor.putBoolean("sword", sword);
+        editor.putBoolean("emerald", emerald);
+        editor.putInt("part", 1);
+        editor.putInt("storyProgress", progress);
+
+        editor.commit();
+
+        super.onDestroy();
+    }
+
 
     public void onClick(View view) {
 
@@ -36,6 +102,7 @@ public class Part1 extends Activity {
             // From part1_intro.xml
             // Asks fairy's purpose
             case R.id.ask1:
+                progress = R.layout.part1_ask_fairy;
                 setContentView(R.layout.part1_ask_fairy);
                 break;
 
@@ -86,13 +153,15 @@ public class Part1 extends Activity {
 
             // From part1_dark_path.xml
             case R.id.runAwayButton:
-                setContentView(R.layout.part1_sword);
+                setContentView(R.layout.part1_run_away_from_goblin);
                 break;
 
             // From part1_dark_path.xml
             case R.id.sayHelloButton:
+                progress = R.layout.part1_say_hello;
                 setContentView(R.layout.part1_say_hello);
                 break;
+
 
             // From part1_dark_path.xml
             case R.id.attackButton:
@@ -325,6 +394,5 @@ public class Part1 extends Activity {
 
         } //end switch
     } //end onImageClick
-
 }
 
