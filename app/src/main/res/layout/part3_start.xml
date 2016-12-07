@@ -17,7 +17,7 @@
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClickHint"
         />
 
     <TextView
