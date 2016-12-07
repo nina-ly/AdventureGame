@@ -156,12 +156,26 @@ public class Part1 extends Activity {
                 setContentView(R.layout.part1_run_away_from_goblin);
                 break;
 
+            // From part1_run_away_from_goblin.xml
+            case R.id.pullSwordButton:
+                setContentView(R.layout.part1_sword);
+                break;
+
             // From part1_dark_path.xml
             case R.id.sayHelloButton:
                 progress = R.layout.part1_say_hello;
                 setContentView(R.layout.part1_say_hello);
                 break;
 
+            // From part1_say_hello.xml (spanish xml)
+            case R.id.attackHim:
+                setContentView(R.layout.part1_attack_goblin);
+                break;
+
+            // From part1_say_hello.xml
+            case R.id.yesHelp:
+                setContentView(R.layout.part1_goblin_help);
+                break;
 
             // From part1_dark_path.xml
             case R.id.attackButton:
@@ -184,12 +198,19 @@ public class Part1 extends Activity {
                 break;
 
             // From part1_attack_globin.xml
+            case R.id.leaveNowButton:
+                setContentView(R.layout.part1_leave_after_finding_gold);
+                break;
+
+            // From part1_attack_globin.xml
             case R.id.keepLookingButton:
                 setContentView(R.layout.part1_keep_looking);
                 break;
 
             // From part1_attack_globin.xml
-            //add leave logic
+            case R.id.followPath:
+                setContentView(R.layout.part1_sword);
+                break;
 
             // From part1_keep_looking.xml
             case R.id.keepLookingButton2:
@@ -209,8 +230,6 @@ public class Part1 extends Activity {
             case R.id.quitGame:
                 System.exit(0);
                 break;
-
-            //add part1_spanish_setting.xml
 
             // From part1_goblin_help.xml
             case R.id.swordHelpFromGoblin:
@@ -253,7 +272,7 @@ public class Part1 extends Activity {
                 startActivity(part2);
                 break;
 
-            // From part1_leave_insscription.xml
+            // From part1_leave_inscription.xml
             case R.id.goToPart2:
                 Intent partdos = new Intent(Part1.this, Cave.class);
                 startActivity(partdos);
@@ -296,17 +315,6 @@ public class Part1 extends Activity {
                 Toast runAway = Toast.makeText(Part1.this, "Tap on the sword to try to pull it out of the rock. Keep trying until you get the sword. It could be useful!", Toast.LENGTH_LONG);
                 runAway.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 runAway.show();
-                break;
-
-            case R.id.swordInRock:
-                counter++;
-
-                if (counter == 13) {
-                    Toast sword = Toast.makeText(Part1.this, "Success! You retrieved the sword!", Toast.LENGTH_LONG);
-                    sword.setGravity(Gravity.CENTER, 0, 500);
-                    sword.show();
-                }
-
                 break;
 
             case R.id.attackGoblinFairy:

@@ -52,6 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Yes! We are trying to get home."
+        android:onClick="onClick"
         android:layout_above="@+id/attackHim"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -60,6 +61,7 @@
         android:id="@+id/attackHim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="Attack him"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/spanishFairy"

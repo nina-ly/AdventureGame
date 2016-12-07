@@ -37,13 +37,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Of course! The directions out of the forest are simple. First, follow this path and you will exit the forest. Next, the exit will be right after the sword in the stone.
-        I also found this device lying around. Goblins can see in the dark so why don't you take it? *Gives us flashlight*"
+        android:text="Of course! The directions out of the forest are simple. First, follow this path and you will exit the forest. Next, the exit will be right after the sword in the stone. I also found this device lying around. Goblins can see in the dark so why don't you take it? *Gives us flashlight*"
         android:id="@+id/text1"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_alignBottom="@+id/imageView"
+        android:textColor="@color/white"
+        android:layout_above="@+id/swordHelpFromGoblin"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -51,8 +50,10 @@
         android:id="@+id/swordHelpFromGoblin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Follow the path"
+        android:onClick="onClick"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Follow the path"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

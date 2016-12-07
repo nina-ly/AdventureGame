@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dark_path2">
+    android:background="@drawable/dark_path">
 
     <ImageButton
         android:background="@drawable/blue_fairy"
@@ -20,17 +20,18 @@
         android:layout_height="50dp"
         android:background="@drawable/gold"
         android:id="@+id/gold"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="44dp"
         android:layout_above="@+id/keepLookingButton2"
-        android:layout_alignLeft="@+id/text1"
-        android:layout_alignStart="@+id/text1" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Oh! You found some gold."
+        android:text="Oh, you found some gold!"
         android:id="@+id/text1"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/keepLookingFairy"

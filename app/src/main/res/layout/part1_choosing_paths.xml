@@ -13,10 +13,11 @@
         android:layout_height="wrap_content"
         android:text="You start walking deeper into the forest until you encountered two paths."
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:paddingTop="250dp"
         android:paddingBottom="10dp"
-        android:layout_below="@+id/hint"
+        android:layout_below="@+id/choosingPathFairy"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -31,7 +32,7 @@
         android:textSize="16sp"
         android:paddingTop="250dp"
         android:paddingBottom="10dp"
-        android:layout_centerVertical="true"
+        android:layout_above="@+id/sunnyPathButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -51,10 +52,9 @@
         android:layout_height="wrap_content"
         android:onClick="onClick"
         android:text="Sunny path"
-        android:layout_below="@+id/text1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="70dp" />
+        android:layout_above="@+id/darkPathButton"
+        android:layout_alignRight="@+id/choosingPathFairy"
+        android:layout_alignEnd="@+id/choosingPathFairy" />
 
     <Button
         android:id="@+id/darkPathButton"
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:onClick="onClick"
         android:text="Dark path"
-        android:layout_below="@+id/sunnyPathButton"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
