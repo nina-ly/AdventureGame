@@ -47,7 +47,6 @@ public class StartScreen extends Activity {
         }else if (points.getInt("part",1) == 2){
             resumeGame = new Intent(StartScreen.this, Cave.class);
             startActivity(resumeGame);
-
         }else{
             resumeGame = new Intent(StartScreen.this, Part3Castle.class);
             startActivity(resumeGame);
