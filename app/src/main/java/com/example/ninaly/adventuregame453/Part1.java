@@ -2,24 +2,90 @@ package com.example.ninaly.adventuregame453;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.Gravity;
+
+import java.lang.reflect.Array;
+import java.util.Random;
 
 public class Part1 extends Activity {
 
     int counter = 0;
 
+    public static final String Data = "Progress_Data";
+    int points, evilPoints, progress;
+    private boolean lantern, sword, emerald, key, treasure;
+    SharedPreferences progressData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.part1_intro);
+
+        progressData = getSharedPreferences(Data, 0);
+        points = progressData.getInt("points", 0);
+        evilPoints = progressData.getInt("evilPoints", 0);
+        progress = progressData.getInt("storyProgress", 0);
+        lantern = progressData.getBoolean("lantern", true);
+        sword = progressData.getBoolean("sword", true);
+        emerald = progressData.getBoolean("emerald", false);
+        key = progressData.getBoolean("key", true);
+        treasure = progressData.getBoolean("treasure", false);
+
+        setContentView(progress);
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    protected void onPause() {
+
+        SharedPreferences.Editor editor = progressData.edit();
+
+        editor.putInt("points", points);
+        editor.putInt("evil-points", evilPoints);
+        editor.putBoolean("lantern", lantern);
+        editor.putBoolean("sword", sword);
+        editor.putBoolean("emerald", emerald);
+        editor.putInt("part", 1);
+        editor.putInt("storyProgress", progress);
+
+        editor.commit();
+
+        super.onPause();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        SharedPreferences.Editor editor = progressData.edit();
+
+        editor.putInt("points", points);
+        editor.putInt("evil-points", evilPoints);
+        editor.putBoolean("lantern", lantern);
+        editor.putBoolean("sword", sword);
+        editor.putBoolean("emerald", emerald);
+        editor.putInt("part", 1);
+        editor.putInt("storyProgress", progress);
+
+        editor.commit();
+
+        super.onDestroy();
+    }
+
 
     public void onClick(View view) {
 
@@ -36,6 +102,7 @@ public class Part1 extends Activity {
             // From part1_intro.xml
             // Asks fairy's purpose
             case R.id.ask1:
+                progress = R.layout.part1_ask_fairy;
                 setContentView(R.layout.part1_ask_fairy);
                 break;
 
@@ -86,12 +153,28 @@ public class Part1 extends Activity {
 
             // From part1_dark_path.xml
             case R.id.runAwayButton:
+                setContentView(R.layout.part1_run_away_from_goblin);
+                break;
+
+            // From part1_run_away_from_goblin.xml
+            case R.id.pullSwordButton:
                 setContentView(R.layout.part1_sword);
                 break;
 
             // From part1_dark_path.xml
             case R.id.sayHelloButton:
+                progress = R.layout.part1_say_hello;
                 setContentView(R.layout.part1_say_hello);
+                break;
+
+            // From part1_say_hello.xml (spanish xml)
+            case R.id.attackHim:
+                setContentView(R.layout.part1_attack_goblin);
+                break;
+
+            // From part1_say_hello.xml
+            case R.id.yesHelp:
+                setContentView(R.layout.part1_goblin_help);
                 break;
 
             // From part1_dark_path.xml
@@ -115,12 +198,19 @@ public class Part1 extends Activity {
                 break;
 
             // From part1_attack_globin.xml
+            case R.id.leaveNowButton:
+                setContentView(R.layout.part1_leave_after_finding_gold);
+                break;
+
+            // From part1_attack_globin.xml
             case R.id.keepLookingButton:
                 setContentView(R.layout.part1_keep_looking);
                 break;
 
             // From part1_attack_globin.xml
-            //add leave logic
+            case R.id.followPath:
+                setContentView(R.layout.part1_sword);
+                break;
 
             // From part1_keep_looking.xml
             case R.id.keepLookingButton2:
@@ -140,8 +230,6 @@ public class Part1 extends Activity {
             case R.id.quitGame:
                 System.exit(0);
                 break;
-
-            //add part1_spanish_setting.xml
 
             // From part1_goblin_help.xml
             case R.id.swordHelpFromGoblin:
@@ -184,7 +272,7 @@ public class Part1 extends Activity {
                 startActivity(part2);
                 break;
 
-            // From part1_leave_insscription.xml
+            // From part1_leave_inscription.xml
             case R.id.goToPart2:
                 Intent partdos = new Intent(Part1.this, Cave.class);
                 startActivity(partdos);
@@ -227,17 +315,6 @@ public class Part1 extends Activity {
                 Toast runAway = Toast.makeText(Part1.this, "Tap on the sword to try to pull it out of the rock. Keep trying until you get the sword. It could be useful!", Toast.LENGTH_LONG);
                 runAway.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 runAway.show();
-                break;
-
-            case R.id.swordInRock:
-                counter++;
-
-                if (counter == 13) {
-                    Toast sword = Toast.makeText(Part1.this, "Success! You retrieved the sword!", Toast.LENGTH_LONG);
-                    sword.setGravity(Gravity.CENTER, 0, 500);
-                    sword.show();
-                }
-
                 break;
 
             case R.id.attackGoblinFairy:
@@ -325,6 +402,5 @@ public class Part1 extends Activity {
 
         } //end switch
     } //end onImageClick
-
 }
 
