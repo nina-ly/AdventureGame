@@ -388,18 +388,18 @@ public class Cave extends Activity implements SensorEventListener {
     }
 
     protected void onResume() {
-        SharedPreferences.Editor editor = progressData.edit();
+        progressData = getSharedPreferences(Data, 0);
+        points = progressData.getInt("points", 0);
+        evilPoints = progressData.getInt("evilPoints", 0);
+        progress = progressData.getInt("storyProgress", R.layout.cavebeginning);
+        lantern = progressData.getBoolean("lantern", true);
+        sword = progressData.getBoolean("sword", true);
+        emerald = progressData.getBoolean("emerald", false);
+        key = progressData.getBoolean("key", true);
+        treasure = progressData.getBoolean("treasure", false);
 
-        editor.putInt("points", points);
-        editor.putInt("evil-points", evilPoints);
-        editor.putBoolean("lantern", lantern);
-        editor.putBoolean("sword", sword);
-        editor.putBoolean("emerald", emerald);
-        editor.putInt("part", 2);
-        editor.putInt("storyProgress", progress);
-
-        editor.commit();
         super.onResume();
+        setContentView(progress);
         mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
