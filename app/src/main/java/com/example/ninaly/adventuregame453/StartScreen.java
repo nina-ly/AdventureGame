@@ -23,7 +23,7 @@ public class StartScreen extends Activity {
         SharedPreferences.Editor editor = points.edit();
 
         editor.putInt("points", 0);
-        editor.putInt("evil-points", 5);
+        editor.putInt("evil-points", 1);
         editor.putBoolean("lantern", true);
         editor.putBoolean("sword", true);
         editor.putBoolean("emerald", true);
@@ -49,7 +49,6 @@ public class StartScreen extends Activity {
         }else{
             resumeGame = new Intent(StartScreen.this, Part3Castle.class);
             startActivity(resumeGame);
-
         }
 
     }

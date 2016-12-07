@@ -32,14 +32,14 @@ public class Part1 extends Activity {
         progressData = getSharedPreferences(Data, 0);
         points = progressData.getInt("points", 0);
         evilPoints = progressData.getInt("evilPoints", 0);
-        progress = progressData.getInt("storyProgress", 0);
+        progress = progressData.getInt("storyProgress", R.layout.part1_intro);
         lantern = progressData.getBoolean("lantern", true);
         sword = progressData.getBoolean("sword", true);
         emerald = progressData.getBoolean("emerald", false);
         key = progressData.getBoolean("key", true);
         treasure = progressData.getBoolean("treasure", false);
 
-        setContentView(progress);
+        setContentView(R.layout.part1_intro);
 
     }
 
@@ -142,6 +142,18 @@ public class Part1 extends Activity {
             // From part1_sunny_path
             // Goes directly to part 2 after this button is clicked
             case R.id.part2Button:
+                SharedPreferences.Editor editor = progressData.edit();
+
+                editor.putInt("points", points);
+                editor.putInt("evil-points", evilPoints);
+                editor.putBoolean("lantern", lantern);
+                editor.putBoolean("sword", sword);
+                editor.putBoolean("emerald", emerald);
+                editor.putInt("part", 2);
+                editor.putInt("storyProgress", R.layout.cavebeginning);
+
+                editor.commit();
+                progress = R.layout.cavebeginning;
                 Intent intent = new Intent(Part1.this, Cave.class);
                 startActivity(intent);
                 break;
@@ -268,12 +280,35 @@ public class Part1 extends Activity {
 
             // From part1_keep_walking.xml
             case R.id.part2Butt:
+                editor = progressData.edit();
+
+                editor.putInt("points", points);
+                editor.putInt("evil-points", evilPoints);
+                editor.putBoolean("lantern", lantern);
+                editor.putBoolean("sword", sword);
+                editor.putBoolean("emerald", emerald);
+                editor.putInt("part", 2);
+                editor.putInt("storyProgress", R.layout.cavebeginning);
+                progress = R.layout.cavebeginning;
+                editor.commit();
                 Intent part2 = new Intent(Part1.this, Cave.class);
                 startActivity(part2);
                 break;
 
             // From part1_leave_inscription.xml
             case R.id.goToPart2:
+                editor = progressData.edit();
+
+                editor.putInt("points", points);
+                editor.putInt("evil-points", evilPoints);
+                editor.putBoolean("lantern", lantern);
+                editor.putBoolean("sword", sword);
+                editor.putBoolean("emerald", emerald);
+                editor.putInt("part", 2);
+                editor.putInt("storyProgress", R.layout.cavebeginning);
+
+                editor.commit();
+                progress = R.layout.cavebeginning;
                 Intent partdos = new Intent(Part1.this, Cave.class);
                 startActivity(partdos);
                 break;
