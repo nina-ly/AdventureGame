@@ -21,6 +21,8 @@
         android:layout_height="wrap_content"
         android:text="As you are walking down the path, you come across a small goblin pushing his cart."
         android:id="@+id/text1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:layout_above="@+id/runAwayButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

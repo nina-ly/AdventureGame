@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:text="Well, I was hiding in your cart which obviously not a good idea. I am just trying to get home like you are. Should we travel together?"
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="14sp"
         android:layout_centerVertical="true"
         android:paddingTop="250dp"

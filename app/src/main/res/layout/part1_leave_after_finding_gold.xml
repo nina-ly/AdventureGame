@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dark_path2" >
+    android:background="@drawable/dark_path" >
 
     <ImageButton
         android:background="@drawable/blue_fairy"
@@ -15,13 +15,35 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/small_globin"
+        android:id="@+id/globin"
+        android:rotation="270"
+        android:layout_above="@+id/followPath"
+        android:layout_toLeftOf="@+id/leaveAfter"
+        android:layout_toStartOf="@+id/leaveAfter" />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Whew"
+        android:text="We leave him in a beat-up pile."
         android:id="@+id/text1"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_centerVertical="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Follow path"
+        android:onClick="onClick"
+        android:id="@+id/followPath"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

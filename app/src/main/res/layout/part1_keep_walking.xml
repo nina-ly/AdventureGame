@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:text="You continue on out of the forest leaving the sword as an interesting souvenir."
         android:layout_marginBottom="30dp"
         android:layout_above="@+id/part2Butt"

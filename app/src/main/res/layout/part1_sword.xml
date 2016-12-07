@@ -18,14 +18,15 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/sword"
+        android:background="@drawable/sword2"
         android:layout_above="@+id/pullSword"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:text="You follow the path and run into a stone with a shiny sword sticking out of it."
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"

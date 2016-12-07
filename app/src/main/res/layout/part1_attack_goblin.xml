@@ -38,6 +38,8 @@
         android:layout_height="wrap_content"
         android:text="The goblin was weak but he only had some weird goblin food and a flashlight in his cart."
         android:id="@+id/text1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:layout_above="@+id/keepLookingButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -58,6 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Keep looking"
+        android:onClick="onClick"
         android:layout_above="@+id/leaveNowButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -67,6 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Leave"
+        android:onClick="onClick"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
