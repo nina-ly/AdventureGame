@@ -47,4 +47,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <ImageView
+        android:src="@drawable/king"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emerald"
+        android:layout_above="@+id/text"
+        android:layout_below="@+id/hint"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
