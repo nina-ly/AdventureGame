@@ -59,18 +59,9 @@ public class StartScreen extends Activity {
     }
 
     public void onContinueClick(View view){
-        SharedPreferences points = getSharedPreferences(progressData, 0);
-        Intent resumeGame;
-        if(points.getInt("part",1) == 1){
-            resumeGame = new Intent(StartScreen.this, Part1.class);
-            startActivity(resumeGame);
-        }else if (points.getInt("part",1) == 2){
-            resumeGame = new Intent(StartScreen.this, Cave.class);
-            startActivity(resumeGame);
-        }else{
-            resumeGame = new Intent(StartScreen.this, Part3Castle.class);
-            startActivity(resumeGame);
-        }
+        Intent resumeGame = new Intent(StartScreen.this, PlayScreen.class);
+        startActivity(resumeGame);
+
 
     }
 

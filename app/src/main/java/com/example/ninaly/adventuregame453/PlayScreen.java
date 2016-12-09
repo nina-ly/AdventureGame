@@ -90,6 +90,9 @@ public class PlayScreen extends Activity implements SensorEventListener{
         key = progressData.getBoolean("key", false);
         treasure = progressData.getBoolean("treasure", false);
         magic = progressData.getString("magic", "none");
+        if(progress == R.layout.ogrecave || progress == R.layout.sneakaround || progress == R.layout.keepsneaking || progress == R.layout.attackogrewithsword){
+            progress = R.layout.night;
+        }
         setContentView(progress);
         mp.start();
         mp.setLooping(true);
@@ -113,6 +116,8 @@ public class PlayScreen extends Activity implements SensorEventListener{
         editor.putBoolean("treasure", treasure);
         editor.putString("magic", magic);
         editor.putInt("storyProgress", progress);
+
+        editor.commit();
         super.onPause();
         mp.stop();
         mSensorManager.unregisterListener(this);
@@ -423,7 +428,9 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 progress = R.layout.part3_sword;
                 break;
             case R.id.appeal:
-
+                gameover = new Intent(PlayScreen.this, GameOver.class);
+                gameover.putExtra("gameover", 13);
+                startActivity(gameover);
                 break;
             case R.id.threaten:
                 progress = R.layout.part3_threaten;
@@ -500,6 +507,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 progress = R.layout.part3_wizard_appears;
                 break;
             case R.id.fightM:
+                mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
                 progress = R.layout.part3_fight_m;
                 break;
 
@@ -553,6 +561,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 setContentView(R.layout.sneakintothecave);
                 break;
             case R.id.killogre:
+                evilPoints++;
                 progress = R.layout.killtheogreinhissleep;
                 setContentView(R.layout.killtheogreinhissleep);
                 break;
@@ -1135,7 +1144,6 @@ public class PlayScreen extends Activity implements SensorEventListener{
                         break;
                     case R.id.physicalAttack:
                         playerHealth--;
-                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
                         checkDeath();
                         nextFight();
                         break;
@@ -1311,11 +1319,32 @@ public class PlayScreen extends Activity implements SensorEventListener{
 //                toast.show();
                 RelativeLayout rl = (RelativeLayout) findViewById(R.id.dc);
                 TextView tv = (TextView) findViewById(R.id.text1);
-                if (lantern == true) {
+                if (progress == R.layout.darkcave && lantern == true) {
                     rl.setBackgroundResource(R.drawable.ogrecave2);
                     tv.setText("It's bright and lit!");
                     lit = true;
                 }
+
+                if(progress == R.layout.part3_fight_d && magic == "red"){
+                    wizardHealth-=2;
+                    Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                    checkDeath();
+                    nextFight();
+                }
+                if(progress == R.layout.part3_fight_m && magic == "blue"){
+                    wizardHealth-=2;
+                    Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                    checkDeath();
+                    nextFight();
+                }
+                if(progress == R.layout.part3_fight_p && magic == "green"){
+                    wizardHealth-=2;
+                    Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                    checkDeath();
+                    nextFight();
+                }
+
+
 
                 last_x = x;
                 last_y = y;

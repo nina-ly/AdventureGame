@@ -35,7 +35,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="appeal to him"
+        android:text="Leave"
         android:id="@+id/appeal"
         android:layout_gravity="bottom"
         android:onClick="onClick"

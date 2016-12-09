@@ -115,14 +115,15 @@ public class GameOver extends Activity {
                 goPoints.setText("Points: " + points);
                 break;
             case 13:// boring end
-                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.throneroom));
+                layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.castle));
+                image.setImageDrawable(null);
                 goDesc.setText("Wow what a boring story.... you didn't take any risks or anything. geez go home and live your boring life");
                 goPoints.setText("Points: " + points);
                 break;
         }
     }
 
-    void onClick(View view){
+    public void onClick(View view){
         switch (view.getId()){
             case R.id.quitGame:
                 System.exit(0);
