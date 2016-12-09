@@ -10,9 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
+        android:textSize="16sp"
         android:layout_centerVertical="true"
-        android:paddingTop="250dp"
+        android:background="@color/black"
         android:paddingBottom="10dp"
+        android:layout_above="@+id/ask1"
         android:text="You are the merchant. You start walking along the road. Suddenly, a tornado picks him up and throws him into the middle of the forest. When the dust finally clears, he sees that he's surrounded by broken carts. Then, he hears a voice, 'Wow, that's a doozy'. A blue figure appears..." />
 
     <ImageButton
@@ -21,18 +23,16 @@
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:onClick="onClick"
-        android:layout_alignTop="@+id/text1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/swing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Shoo it away"
-        android:textAlignment="center"
         android:onClick="onClick"
-        android:layout_below="@+id/ask1"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -40,12 +40,10 @@
         android:id="@+id/ask1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:text="Ask what they are doing here"
         android:onClick="onClick"
-        android:textSize="14sp"
-        android:layout_below="@+id/text1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/swing"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
