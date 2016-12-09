@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="Go Back"
         android:id="@+id/goback"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true" />
 
     <Button
@@ -34,7 +34,7 @@
         android:text="Walk Across"
         android:id="@+id/walkacross"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/goback" />
 
     <TextView

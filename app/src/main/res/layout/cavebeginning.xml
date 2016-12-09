@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="Regular Cave"
         android:id="@+id/regularcave"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true"/>
 
     <Button
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="Regular Cave"
         android:id="@+id/regularcave"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true"/>
 
     <Button
@@ -42,7 +42,7 @@
         android:text="Ogre Cave"
         android:id="@+id/ogrecave"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@id/regularcave"/>
 
     <TextView
