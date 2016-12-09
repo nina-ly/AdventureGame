@@ -66,6 +66,9 @@ public class StartScreen extends Activity {
     }
 
     public void onExitClick(View view){
-        System.exit(0);
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
+
     }
 }

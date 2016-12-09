@@ -277,6 +277,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 1);
                 startActivity(gameover);
+                finish();
                 break;
 
             // From part1_keep_looking.xml
@@ -385,6 +386,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                     gameover = new Intent(PlayScreen.this, GameOver.class);
                     gameover.putExtra("gameover", 2);
                     startActivity(gameover);
+                    finish();
                     break;
                 }
 
@@ -420,6 +422,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 7);
                 startActivity(gameover);
+                finish();
                 break;
             case R.id.showEmerald:
                 progress = R.layout.part3_emerald;
@@ -431,6 +434,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 13);
                 startActivity(gameover);
+                finish();
                 break;
             case R.id.threaten:
                 progress = R.layout.part3_threaten;
@@ -453,7 +457,10 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 }
                 break;
             case R.id.ignore:
-                progress = R.layout.part3_ignore;
+                gameover = new Intent(PlayScreen.this, GameOver.class);
+                gameover.putExtra("gameover", 13);
+                startActivity(gameover);
+                finish();
                 break;
             case R.id.thinkHero1:
                 progress = R.layout.part3_thinkhero1;
@@ -482,6 +489,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 8);
                 startActivity(gameover);
+                finish();
                 break;
             case R.id.evilFight:
                 progress = R.layout.part3_fightherevil;
@@ -546,11 +554,13 @@ public class PlayScreen extends Activity implements SensorEventListener{
                     gameover = new Intent(PlayScreen.this, GameOver.class);
                     gameover.putExtra("gameover", 3);
                     startActivity(gameover);}
+                    finish();
                 break;
             case R.id.keepattacking:
                 gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 3);
                 startActivity(gameover);
+                finish();
                 break;
             case R.id.giveup:
                 progress = R.layout.regularcave;
@@ -612,7 +622,9 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 else {
                     gameover = new Intent(PlayScreen.this, GameOver.class);
                     gameover.putExtra("gameover", 5);
-                    startActivity(gameover);}
+                    startActivity(gameover);
+                    finish();
+                }
                 break;
             case R.id.run:
                 progress = R.layout.run;
@@ -628,6 +640,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 4);
                 startActivity(gameover);
+                finish();
                 break;
             case R.id.throwsword:
                 sword = false;
@@ -650,6 +663,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 6);
                 startActivity(gameover);
+                finish();
                 break;
             case R.id.usekey:
                 progress = R.layout.usekey;
@@ -681,6 +695,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 7);
                 startActivity(gameover);
+                finish();
                 setContentView(progress);
                 break;
         }
@@ -1277,12 +1292,14 @@ public class PlayScreen extends Activity implements SensorEventListener{
             gameover = new Intent(PlayScreen.this, GameOver.class);
             gameover.putExtra("gameover", 12);
             startActivity(gameover);
+            finish();
         }
         if(princessHealth <= 0){
             points += 10;
             gameover = new Intent(PlayScreen.this, GameOver.class);
             gameover.putExtra("gameover", 11);
             startActivity(gameover);
+            finish();
         }
         if(playerHealth <= 0){
             gameover = new Intent(PlayScreen.this, GameOver.class);
@@ -1292,6 +1309,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 gameover.putExtra("gameover", 9);
             }
             startActivity(gameover);
+            finish();
         }
     }
     

@@ -121,16 +121,36 @@ public class GameOver extends Activity {
                 goPoints.setText("Points: " + points);
                 break;
         }
+        SharedPreferences points = getSharedPreferences(Data, 0);
+        SharedPreferences.Editor editor = points.edit();
+
+        editor.putInt("points", 0);
+        editor.putInt("evilPoints", 0);
+        editor.putInt("player-health", 10);
+        editor.putInt("princess-health", 7);
+        editor.putInt("wizard-health", 10);
+        editor.putBoolean("lantern", false);
+        editor.putBoolean("sword", false);
+        editor.putBoolean("emerald", false);
+        editor.putBoolean("key", false);
+        editor.putBoolean("treasure", false);
+        editor.putString("magic", "none");
+        editor.putInt("storyProgress", R.layout.part1_intro);
+
+        editor.commit();
     }
 
     public void onClick(View view){
         switch (view.getId()){
             case R.id.quitGame:
-                System.exit(0);
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                startActivity(intent);
                 break;
             case R.id.mainMenu:
                 Intent mainmenu = new Intent(GameOver.this, StartScreen.class);
                 startActivity(mainmenu);
+                finish();
                 break;
 
         }
