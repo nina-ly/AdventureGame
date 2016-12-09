@@ -17,7 +17,7 @@
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClickHint"
         />
 
 
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Accept"
-        android:id="@+id/endNoMagic"
+        android:id="@+id/aftermagic"
         android:onClick="onClick"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -38,7 +38,7 @@
         android:id="@+id/tooMuchReward"
         android:layout_gravity="bottom"
         android:onClick="onClick"
-        android:layout_above="@+id/endNoMagic"
+        android:layout_above="@+id/aftermagic"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="we will give you 1000 gold coins "
+        android:text="we will give you 1000 gold coins but no more"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:paddingTop="10dp"

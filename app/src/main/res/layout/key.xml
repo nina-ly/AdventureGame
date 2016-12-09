@@ -50,7 +50,7 @@
         android:text="Regular Cave"
         android:id="@+id/regularcave"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

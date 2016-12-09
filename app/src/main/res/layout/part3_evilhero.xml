@@ -17,7 +17,7 @@
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClickHint"
         />
 
     <ImageView
@@ -33,7 +33,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fight her"
+        android:text="The princess? you dare to challenge me you weakling?"
         android:id="@+id/evilFight"
         android:layout_gravity="bottom"
         android:onClick="onClick"
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="you pull out your sword and send out bloodlust you hear a noise behind you and block an attack before it separated your head from your body the princess"
+        android:text="you pull out your sword and send out bloodlust the king jumps back and suddenly between you appears the princess"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:paddingTop="10dp"

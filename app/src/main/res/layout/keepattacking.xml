@@ -50,7 +50,7 @@
         android:text="Attack Without Sword"
         android:id="@+id/giveup"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

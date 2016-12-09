@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="Give Up"
         android:id="@+id/giveup"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true" />
 
 
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:text="Attack Ogre"
         android:id="@+id/attackogre"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/giveup" />
 
 
@@ -46,7 +46,7 @@
         android:text="Sneak Around"
         android:id="@+id/sneakaround"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/attackogre"/>
 
 

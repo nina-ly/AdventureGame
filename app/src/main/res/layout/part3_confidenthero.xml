@@ -17,7 +17,7 @@
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClickHint"
         />
 
     <ImageView
@@ -33,7 +33,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Only for a reward"
+        android:text="A reward is all I require"
         android:id="@+id/reward1"
         android:onClick="onClick"
         android:layout_alignParentBottom="true"
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="we desire you to help us with a quest will you take the journey?"
+        android:text="Thankyou great hero as you seem rather confident I will allow you to choose between a reward and learning a great magic to aid you in battle"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:paddingTop="10dp"
@@ -58,7 +58,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Of Course"
+        android:text="I will take the magic"
         android:id="@+id/Yield"
         android:layout_gravity="bottom"
         android:onClick="onClick"

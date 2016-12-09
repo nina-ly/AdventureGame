@@ -17,7 +17,7 @@
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClickHint"
         />
 
 
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="will give you a perfect explanation about how to get through extremely tricky situations but will cost you points "
+        android:text="This is the magic of magic reflection and is activated by a shake of your device"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:paddingTop="10dp"

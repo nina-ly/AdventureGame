@@ -18,7 +18,7 @@
         android:layout_height= "100dp"
         android:id="@+id/hint8"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         />
 
     <ImageView
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="Give Up"
         android:id="@+id/giveup"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true" />
 
     <Button
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Kill Ogre In His Sleep"
         android:id="@+id/killogre"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/giveup" />
 
     <Button
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="Sneak Into Cave"
         android:id="@+id/sneakintocave"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/killogre"/>
 
     <TextView

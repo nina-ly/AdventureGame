@@ -17,7 +17,7 @@
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClickHint"
         />
 
     <ImageView
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="The King: There was a prophecy that a hero holding the sword of a king would come and save us, We believe you to be hero and we would like to ask your help and offer what assistance we can "
+        android:text="The King: There has been word of a great evil looming over our kingdom we need help from you great hero!"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:paddingTop="10dp"

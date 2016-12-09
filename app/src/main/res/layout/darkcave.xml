@@ -40,7 +40,7 @@
         android:text="Go Back"
         android:id="@+id/goback"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/travelforward"/>
 
     <Button
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:text="Travel Forward"
         android:id="@+id/travelforward"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

@@ -17,41 +17,31 @@
         android:layout_height= "100dp"
         android:id="@+id/hint"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClickHint"
         />
 
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="it would be an honor but I do not believe I am ready "
+        android:text="It would be an honor to learn your magic"
         android:id="@+id/Yield"
         android:onClick="onClick"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="How is a girl supposed to help me?"
-        android:id="@+id/howGirl"
-        android:layout_gravity="bottom"
-        android:onClick="onClick"
-        android:layout_above="@+id/Yield"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="I know that seems hard to believe but do not think we are asking you to go on this journey alone my daughter will accompany you *A beautiful girl appears*"
+        android:text="I know that it seems hard to believe but we will do everything we can to help you. My daughter will teach you one of the great magics to help in your fight"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:layout_above="@+id/howGirl"
+        android:layout_above="@+id/Yield"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@color/black"
