@@ -21,48 +21,50 @@
         />
 
     <ImageView
-        android:src="@drawable/zeldafight"
+        android:src="@drawable/zelda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/emerald"
-        android:layout_above="@+id/text"
-        android:layout_below="@+id/hint"
-        android:layout_centerHorizontal="true" />
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Agree to let her help you"
-        android:id="@+id/Yield"
-        android:onClick="onClick"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/hint" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Draw sword to fight"
-        android:id="@+id/fightGirl"
-        android:layout_gravity="bottom"
-        android:onClick="onClick"
-        android:layout_above="@+id/Yield"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="The princess disappears from your vision and when you look down she is holding a knife to your throat "
+        android:text="The Princess puts up a magic barrier"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:layout_above="@+id/physicalAttackE"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:layout_above="@+id/fightGirl"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@color/black"
         android:textAlignment="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attack with your sword"
+        android:id="@+id/physicalAttackE"
+        android:layout_gravity="bottom"
+        android:onClick="onClickFight"
+        android:layout_above="@+id/DodgeE"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodge"
+        android:id="@+id/DodgeE"
+        android:onClick="onClickFight"
+        android:layout_above="@+id/DefendE" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guard"
+        android:id="@+id/DefendE"
+        android:onClick="onClickFight"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

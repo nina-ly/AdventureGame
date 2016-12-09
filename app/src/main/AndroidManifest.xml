@@ -24,6 +24,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Part3Castle"></activity>
+        <activity android:name=".GameOver"></activity>
     </application>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
 </manifest>

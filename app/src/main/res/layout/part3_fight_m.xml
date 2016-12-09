@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/throneroom"
+    android:background="@drawable/castle"
     tools:context="com.example.ninaly.adventuregame453.Cave">
 
     <ImageButton
@@ -21,48 +21,50 @@
         />
 
     <ImageView
-        android:src="@drawable/zelda"
+        android:src="@drawable/darkwizard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/emerald"
-        android:layout_above="@+id/text"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:layout_below="@+id/hint" />
 
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Yield"
-        android:id="@+id/Yield"
-        android:onClick="onClick"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Attack her"
-        android:id="@+id/attackGirl"
-        android:layout_gravity="bottom"
-        android:onClick="onClick"
-        android:layout_above="@+id/Yield"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="You pull on the blade of your sword and she jumps back"
+        android:text="The Wizard casts a powerful spell"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:layout_above="@+id/physicalAttack"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:layout_above="@+id/attackGirl"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@color/black"
         android:textAlignment="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attack with your sword"
+        android:id="@+id/physicalAttack"
+        android:layout_gravity="bottom"
+        android:onClick="onClickFight"
+        android:layout_above="@+id/Dodge"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodge"
+        android:id="@+id/Dodge"
+        android:onClick="onClickFight"
+        android:layout_above="@+id/Defend" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guard"
+        android:id="@+id/Defend"
+        android:onClick="onClickFight"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

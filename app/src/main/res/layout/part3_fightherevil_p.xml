@@ -20,54 +20,51 @@
         android:onClick="onClickHint"
         />
 
-
-    <Button
-        android:layout_width="match_parent"
+    <ImageView
+        android:src="@drawable/zelda"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Accept"
-        android:id="@+id/aftermagic"
-        android:onClick="onClick"
+        android:id="@+id/emerald"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/hint" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ask for more again"
-        android:id="@+id/tooMuchReward"
-        android:layout_gravity="bottom"
-        android:onClick="onClick"
-        android:layout_above="@+id/aftermagic"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="we will give you 1000 gold coins but no more"
+        android:text="The Princess swings her staff down with great force"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:layout_above="@+id/physicalAttackE"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:layout_above="@+id/tooMuchReward"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@color/black"
         android:textAlignment="center"/>
 
-    <ImageView
-        android:src="@drawable/kingmoretreasure"
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/emerald"
-        android:layout_above="@+id/text"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/gold"
-        android:layout_toLeftOf="@+id/gold"
-        android:layout_below="@+id/hint" />
+        android:text="Attack with your sword"
+        android:id="@+id/physicalAttackE"
+        android:layout_gravity="bottom"
+        android:onClick="onClickFight"
+        android:layout_above="@+id/DodgeE"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodge"
+        android:id="@+id/DodgeE"
+        android:onClick="onClickFight"
+        android:layout_above="@+id/DefendE" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guard"
+        android:id="@+id/DefendE"
+        android:onClick="onClickFight"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

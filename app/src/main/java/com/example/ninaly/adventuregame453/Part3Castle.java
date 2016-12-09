@@ -1,6 +1,7 @@
 package com.example.ninaly.adventuregame453;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -9,14 +10,17 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.Random;
+
 /**
  * Created by Christian on 11/11/2016.
  */
 
 public class Part3Castle extends Activity {
     public static final String Data = "Progress_Data";
-    int points, evilPoints, progress;
+    int points, evilPoints, progress, wizardHealth, princessHealth, playerHealth;
     private boolean lantern, sword, emerald, key, treasure;
+    private String magic;
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private long curTime, lastUpdate;
@@ -37,7 +41,12 @@ public class Part3Castle extends Activity {
         emerald = progressData.getBoolean("emerald", false);
         key = progressData.getBoolean("key", true);
         treasure = progressData.getBoolean("treasure", false);
-        setContentView(R.layout.part3_start);
+        magic = progressData.getString("magic", "none");
+        progress = R.layout.part3_start;
+        playerHealth = 10;
+        wizardHealth = 10;
+        princessHealth = 7;
+        setContentView(progress);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         curTime = lastUpdate = (long) 0.0;
@@ -61,7 +70,9 @@ public class Part3Castle extends Activity {
                 }
                 break;
             case R.id.moat:
-                progress = R.layout.part3_moat;
+                Intent gameover = new Intent(Part3Castle.this, GameOver.class);
+                gameover.putExtra("gameover", 7);
+                startActivity(gameover);
                 break;
             case R.id.showEmerald:
                 progress = R.layout.part3_emerald;
@@ -104,54 +115,55 @@ public class Part3Castle extends Activity {
             case R.id.EvilHero:
                 progress = R.layout.part3_evilhero;
                 break;
-            case R.id.howGirl:
-                progress = R.layout.part3_howgirl;
-                break;
             case R.id.Yield:
                 progress = R.layout.part3_yield;
                 break;
-            case R.id.fightGirl:
-                progress = R.layout.part3_fightgirl;
-                break;
-            case R.id.attackGirl:
-                progress = R.layout.part3_attackgirl;
-                break;
             case R.id.aftermagic:
+                points += 5;
                 progress = R.layout.part3_aftermagic;
                 break;
             case R.id.reward1:
+                points += 5;
                 progress = R.layout.part3_reward1;
                 break;
             case R.id.moreReward:
                 progress = R.layout.part3_morereward;
                 break;
             case R.id.tooMuchReward:
-                progress = R.layout.part3_toomuchreward;
-                break;
-            case R.id.endNoMagic:
-                progress = R.layout.part3_endnomagic;
+                gameover = new Intent(Part3Castle.this, GameOver.class);
+                gameover.putExtra("gameover", 8);
+                startActivity(gameover);
                 break;
             case R.id.evilFight:
                 progress = R.layout.part3_fightherevil;
-                //register shake listener
                 break;
-            case R.id.keepFighting:
-                progress = R.layout.part3_attackgirl;
+            case R.id.evilFightM:
+                princessHealth = 7;
+                progress = R.layout.part3_fightherevil_m;
                 break;
             case R.id.redMagic:
                 progress = R.layout.part3_redmagic;
+                magic = "red";
                 break;
             case R.id.greenMagic:
                 progress = R.layout.part3_greenmagic;
+                magic = "green";
                 break;
             case R.id.blueMagic:
                 progress = R.layout.part3_bluemagic;
+                magic = "blue";
                 break;
-
-
+            case R.id.wizard:
+                wizardHealth = 10;
+                progress = R.layout.part3_wizard_appears;
+                break;
+            case R.id.fightM:
+                progress = R.layout.part3_fight_m;
         }
         setContentView(progress);
     }
+
+
 
     public void onClickHint(View view){
         Toast toast;
@@ -246,16 +258,6 @@ public class Part3Castle extends Activity {
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
-            case R.layout.part3_howgirl:
-                toast = Toast.makeText(this, "Hey man be careful I'm not sure you want to mess with her. -Fairy", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
-                toast.show();
-                break;
-            case R.layout.part3_fightgirl:
-                toast = Toast.makeText(this, "Oh cmon don't provoke her she'll kill you for sure. -Fairy", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
-                toast.show();
-                break;
             case R.layout.part3_attackgirl:
                 toast = Toast.makeText(this, "I told you she was strong and now youre dead. -Fairy", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
@@ -297,21 +299,214 @@ public class Part3Castle extends Activity {
                 toast.show();
                 break;
             case R.layout.part3_redmagic:
-                toast = Toast.makeText(this, "I sense the presense of a vile being in one of the caves. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "This is very powerful against someone who is defending. -Fairy", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_greenmagic:
-                toast = Toast.makeText(this, "I sense the presense of a vile being in one of the caves. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "This is very powerful against an enemy's physical attacks. -Fairy", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_bluemagic:
-                toast = Toast.makeText(this, "I sense the presense of a vile being in one of the caves. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "this is very powerful against an enemy's magical attacks. -Fairy", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                toast.show();
+                break;
+            case R.layout.part3_fightherevil_d:
+                toast = Toast.makeText(this, "She must be scared but while she is defending we are at a stale mate. -Fairy", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                toast.show();
+                break;
+            case R.layout.part3_fightherevil_m:
+                toast = Toast.makeText(this, "She is readying a spell take advantage and attack. -Fairy", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                toast.show();
+                break;
+            case R.layout.part3_fightherevil_p:
+                toast = Toast.makeText(this, "that looks strong but slow you should defend and counter!. -Fairy", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                toast.show();
+                break;
+            case R.layout.part3_fight_d:
+                toast = Toast.makeText(this, "He must be scared but while he is defending we are at a stale mate. -Fairy", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                toast.show();
+                break;
+            case R.layout.part3_fight_m:
+                toast = Toast.makeText(this, "He is readying a spell take advantage and attack. -Fairy", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                toast.show();
+                break;
+            case R.layout.part3_fight_p:
+                toast = Toast.makeText(this, "that looks strong but slow you should defend and counter!. -Fairy", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
 
+        }
+    }
+
+    public void onClickFight(View view){
+        switch(progress){
+            case R.layout.part3_fight_d:
+            case R.layout.part3_fightherevil_d:
+                switch(view.getId()){
+                    case R.id.Defend:
+                        nextFight();
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.physicalAttack:
+                        playerHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.Dodge:
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        nextFight();
+                        break;
+                    case R.id.DefendE:
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        nextFight();
+                        break;
+                    case R.id.physicalAttackE:
+                        playerHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.DodgeE:
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        nextFight();
+                        break;
+                }
+                break;
+            case R.layout.part3_fight_p:
+            case R.layout.part3_fightherevil_p:
+                switch(view.getId()){
+                    case R.id.Defend:
+                        wizardHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.physicalAttack:
+                        playerHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.Dodge:
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        nextFight();
+                        break;
+                    case R.id.DefendE:
+                        princessHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.physicalAttackE:
+                        playerHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.DodgeE:
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        nextFight();
+                        break;
+                }
+                break;
+            case R.layout.part3_fight_m:
+            case R.layout.part3_fightherevil_m:
+                switch(view.getId()){
+                    case R.id.Defend:
+                        playerHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.physicalAttack:
+                        wizardHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.Dodge://next sequence
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + wizardHealth, Toast.LENGTH_LONG).show();
+                        nextFight();
+                        break;
+                    case R.id.DefendE:
+                        playerHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.physicalAttackE:
+                        princessHealth--;
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        checkDeath();
+                        nextFight();
+                        break;
+                    case R.id.DodgeE:
+                        Toast.makeText(this, "Player Health:" + playerHealth + " Enemy Health: " + princessHealth, Toast.LENGTH_LONG).show();
+                        nextFight();
+                        break;
+                }
+                break;
+        }
+    }
+
+    void nextFight(){
+        Random rand = new Random();
+        int next = rand.nextInt(10);
+
+        if(progress == R.layout.part3_fight_d || progress == R.layout.part3_fight_p || progress == R.layout.part3_fight_m){
+            if(next <=2){
+                progress = R.layout.part3_fight_d;
+            }else if (next >2 && next <= 6){
+                progress = R.layout.part3_fight_m;
+            }else{
+                progress = R.layout.part3_fight_p;
+            }
+        }
+        else{
+            if(next <=2){
+                progress = R.layout.part3_fightherevil_d;
+            }else if (next >2 && next <= 6){
+                progress = R.layout.part3_fightherevil_m;
+            }else{
+                progress = R.layout.part3_fightherevil_p;
+            }
+        }
+        setContentView(progress);
+    }
+
+
+
+    void checkDeath(){
+        if(wizardHealth <= 0){
+            points += 10;
+            Intent gameover = new Intent(Part3Castle.this, GameOver.class);
+            gameover.putExtra("gameover", 12);
+            startActivity(gameover);
+        }
+        if(princessHealth <= 0){
+            points += 10;
+            Intent gameover = new Intent(Part3Castle.this, GameOver.class);
+            gameover.putExtra("gameover", 11);
+            startActivity(gameover);
+        }
+        if(playerHealth <= 0){
+            Intent gameover = new Intent(Part3Castle.this, GameOver.class);
+            if(wizardHealth < 10){
+                gameover.putExtra("gameover", 10);
+            }else{
+                gameover.putExtra("gameover", 9);
+            }
+            startActivity(gameover);
         }
     }
 
