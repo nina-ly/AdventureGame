@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="Attack Ogre"
         android:id="@+id/attackogre"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/giveup" />
 
     <Button
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="Give Up"
         android:id="@+id/giveup"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true" />
 
     <Button
@@ -43,7 +43,7 @@
         android:text="Keep Sneaking"
         android:id="@+id/keepsneaking"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/attackogre"/>
 
     <TextView

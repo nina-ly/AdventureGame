@@ -24,21 +24,16 @@ public class StartScreen extends Activity {
 
     @Override
     protected void onPause() {
-        mp.stop();
         super.onPause();
+        mp.stop();
     }
 
     @Override
     protected void onResume() {
-        mp.start();
         super.onResume();
+        mp.start();
     }
 
-    @Override
-    protected void onDestroy() {
-        mp.stop();
-        super.onDestroy();
-    }
     public void onNewGameClick(View view){
         SharedPreferences points = getSharedPreferences(progressData, 0);
         SharedPreferences.Editor editor = points.edit();
@@ -53,7 +48,7 @@ public class StartScreen extends Activity {
 
         editor.commit();
 
-        Intent startNewGame = new Intent(StartScreen.this, Part1.class);
+        Intent startNewGame = new Intent(StartScreen.this, PlayScreen.class);
         startActivity(startNewGame);
 
     }

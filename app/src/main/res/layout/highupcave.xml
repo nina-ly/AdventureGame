@@ -40,7 +40,7 @@
         android:text="Go Back"
         android:id="@+id/goback"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/jump" />
 
     <Button
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:text="Jump"
         android:id="@+id/jump"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/throwsword" />
 
     <Button
@@ -56,6 +56,6 @@
         android:layout_height="wrap_content"
         android:text="Throw Sword To Cut The Rope"
         android:id="@+id/throwsword"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true" />
 </RelativeLayout>

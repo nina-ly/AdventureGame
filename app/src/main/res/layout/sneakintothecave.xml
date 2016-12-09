@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:text="Leave It"
         android:id="@+id/leaveit"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true"
         />
 
@@ -47,7 +47,7 @@
         android:text="Take It And Leave"
         android:id="@+id/takeit"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@id/leaveit"/>
 
     <TextView

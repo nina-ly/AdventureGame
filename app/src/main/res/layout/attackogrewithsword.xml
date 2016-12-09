@@ -51,7 +51,7 @@
         android:text="Keep Attacking"
         android:id="@+id/keepattacking"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_above="@+id/giveup"/>
 
     <Button
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:text="Give Up"
         android:id="@+id/giveup"
-        android:onClick="onClick"
+        android:onClick="onClickCave"
         android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
