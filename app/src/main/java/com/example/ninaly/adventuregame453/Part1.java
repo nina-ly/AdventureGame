@@ -68,34 +68,18 @@ public class Part1 extends Activity {
 
     }
 
-    @Override
-    protected void onDestroy() {
-
-        SharedPreferences.Editor editor = progressData.edit();
-
-        editor.putInt("points", points);
-        editor.putInt("evil-points", evilPoints);
-        editor.putBoolean("lantern", lantern);
-        editor.putBoolean("sword", sword);
-        editor.putBoolean("emerald", emerald);
-        editor.putInt("part", 1);
-        editor.putInt("storyProgress", progress);
-
-        editor.commit();
-
-        super.onDestroy();
-    }
-
-
     public void onClick(View view) {
 
         Button buttonClicked = (Button) view;
+        SharedPreferences.Editor editor = progressData.edit();
+
 
         switch (buttonClicked.getId()) {
 
             // From part1_intro.xml
             // Shoos fairy away
             case R.id.swing:
+                evilPoints++;
                 setContentView(R.layout.part1_take_swing);
                 break;
 
@@ -142,7 +126,6 @@ public class Part1 extends Activity {
             // From part1_sunny_path
             // Goes directly to part 2 after this button is clicked
             case R.id.part2Button:
-                SharedPreferences.Editor editor = progressData.edit();
 
                 editor.putInt("points", points);
                 editor.putInt("evil-points", evilPoints);
@@ -181,6 +164,7 @@ public class Part1 extends Activity {
 
             // From part1_say_hello.xml (spanish xml)
             case R.id.attackHim:
+                evilPoints=+2;
                 setContentView(R.layout.part1_attack_goblin);
                 break;
 
@@ -191,11 +175,13 @@ public class Part1 extends Activity {
 
             // From part1_dark_path.xml
             case R.id.attackButton:
+                evilPoints=+2;
                 setContentView(R.layout.part1_attack_goblin);
                 break;
 
             // From part1_say_hello.xml
             case R.id.attackGoblin:
+                evilPoints=+2;
                 setContentView(R.layout.part1_attack_goblin);
                 break;
 
@@ -229,6 +215,11 @@ public class Part1 extends Activity {
                 setContentView(R.layout.part1_keep_looking_again);
                 break;
 
+            // From part1_keep_looking.xml
+            case R.id.leaveNowButton2:
+                setContentView(R.layout.part1_sword);
+                break;
+
             // From part1_keep_looking_again.xml
             case R.id.gameOver:
                 setContentView(R.layout.part1_gameover);
@@ -241,9 +232,8 @@ public class Part1 extends Activity {
 
             case R.id.quitGame:
                 System.exit(0);
-                break;
 
-            // From part1_goblin_help.xml
+                // From part1_goblin_help.xml
             case R.id.swordHelpFromGoblin:
                 setContentView(R.layout.part1_sword);
                 break;
@@ -315,8 +305,33 @@ public class Part1 extends Activity {
 
             // From part1_pull_sword2.xml
             case R.id.takeTheSword:
-                setContentView(R.layout.part1_leave_inscription);
+
+                if(evilPoints == 0) {
+                    setContentView(R.layout.part1_leave_inscription);
+                    break;
+                }
+                else if(evilPoints == 1) {
+                    setContentView(R.layout.part1_punishment1);
+                    break;
+                }
+                else if(evilPoints >= 2) {
+                    setContentView(R.layout.part1_punishment2);
+                    break;
+                }
+
+                // From part1_punishment1.xml
+            case R.id.lightningStrikes:
+                setContentView(R.layout.part1_keep_walking);
                 break;
+
+
+
+            // From part1_punishment2.xml
+            case R.id.gameOverButton:
+                setContentView(R.layout.part1_gameover);
+                break;
+
+
 
         } //end switch
     } //end onClick
@@ -433,6 +448,18 @@ public class Part1 extends Activity {
                 Toast leave1 = Toast.makeText(Part1.this, "I think we're almost home!", Toast.LENGTH_LONG);
                 leave1.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 leave1.show();
+                break;
+
+            case R.id.punishment1:
+                Toast p1 = Toast.makeText(Part1.this, "RUN! RUN!", Toast.LENGTH_LONG);
+                p1.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                p1.show();
+                break;
+
+            case R.id.punishment2:
+                Toast p2 = Toast.makeText(Part1.this, "Game over :(", Toast.LENGTH_LONG);
+                p2.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                p2.show();
                 break;
 
         } //end switch
