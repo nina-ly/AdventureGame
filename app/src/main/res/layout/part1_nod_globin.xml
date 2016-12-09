@@ -31,17 +31,16 @@
         android:text="The goblin looks mad and whistles. You hear some rustling..."
         android:id="@+id/text1"
         android:textSize="16sp"
+        android:layout_above="@+id/attackGoblin"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginTop="440dp"
-         />
+        android:background="@color/black" />
 
     <Button
         android:id="@+id/attackGoblin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Keep looking around"
-        android:layout_marginBottom="30dp"
+        android:onClick="onClick"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

@@ -18,7 +18,7 @@
         android:layout_height= "100dp"
         android:id="@+id/hint5"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClick2"
         />
 
     <ImageView
@@ -26,8 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ogre"
-        android:layout_alignTop="@+id/text"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingTop="100dp"
         />
 
 
@@ -39,8 +40,10 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:layout_centerVertical="true"
-        android:paddingTop="210dp"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp"
+        android:background="@color/black"
+        android:layout_below="@id/ogre"
+        />
 
     <Button
         android:layout_width="match_parent"
@@ -49,7 +52,7 @@
         android:id="@+id/keepattacking"
         android:layout_gravity="bottom"
         android:onClick="onClick"
-        android:layout_below="@+id/text"/>
+        android:layout_above="@+id/giveup"/>
 
     <Button
         android:layout_width="match_parent"
@@ -57,6 +60,6 @@
         android:text="Give Up"
         android:id="@+id/giveup"
         android:onClick="onClick"
-        android:layout_below="@+id/keepattacking" />
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
