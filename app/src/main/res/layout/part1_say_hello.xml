@@ -5,11 +5,38 @@
     android:layout_height="match_parent"
     android:background="@drawable/dark_path">
 
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:id="@+id/spanishFairy"
+        android:onClick="onImageClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:background="@drawable/settings"
+        android:layout_width = "50dp"
+        android:layout_height= "50dp"
+        android:id="@+id/settingButton"
+        android:onClick="onImageClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You: HELLO.....!"/>
+        android:text="@string/hello"
+        android:id="@+id/text1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="150dp"
@@ -17,6 +44,33 @@
         android:background="@drawable/small_globin"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="167dp" />
+        android:layout_marginBottom="167dp"
+        android:id="@+id/imageView" />
+
+    <Button
+        android:id="@+id/leaveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Leave him because you do not understand"/>
+
+    <Button
+        android:id="@+id/attackGoblin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attack him"
+        android:layout_above="@+id/leaveButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/nodButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nod and point"
+        android:layout_above="@+id/attackGoblin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

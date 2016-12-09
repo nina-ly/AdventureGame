@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:screenOrientation="landscape"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -15,11 +16,26 @@
         android:background="@drawable/blue_fairy"
         android:layout_width = "100dp"
         android:layout_height= "100dp"
-        android:id="@+id/hint"
+        android:id="@+id/hint20"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClick2"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:id="@+id/goback"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Walk Across"
+        android:id="@+id/walkacross"
+        android:layout_gravity="bottom"
+        android:onClick="onClick"
+        android:layout_above="@+id/goback" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,24 +46,8 @@
         android:textSize="16sp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:paddingTop="125dp"
-        android:paddingBottom="10dp"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Walk Across"
-        android:id="@+id/button1"
-        android:layout_gravity="bottom"
-        android:onClick="onClick"
-        android:layout_below="@+id/text" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Go Back"
-        android:id="@+id/button2"
-        android:onClick="onClick"
-        android:layout_below="@+id/button1" />
+        android:paddingBottom="10dp"
+        android:background="@color/black"
+        android:layout_above="@id/walkacross"/>
 
 </RelativeLayout>

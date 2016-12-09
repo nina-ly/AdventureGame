@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/throneroom"
+    tools:context="com.example.ninaly.adventuregame453.Cave">
+
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:id="@+id/hint"
+        android:layout_alignParentRight="true"
+        android:onClick="onClick"
+        />
+
+    <ImageView
+        android:src="@drawable/zeldawalkingaway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emerald"
+        android:layout_above="@+id/text"
+        android:layout_below="@+id/hint"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:text="this is ridiculous the king looks behind you with an angry glare and all of a sudden you feel your neck separate from your body “another failure of a hero”"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/black"
+        android:textAlignment="center"/>
+
+</RelativeLayout>

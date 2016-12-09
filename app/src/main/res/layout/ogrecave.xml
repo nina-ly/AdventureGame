@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:screenOrientation="portrait"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -15,54 +16,61 @@
         android:background="@drawable/blue_fairy"
         android:layout_width = "100dp"
         android:layout_height= "100dp"
-        android:id="@+id/hint"
+        android:id="@+id/hint2"
         android:layout_alignParentRight="true"
-        android:onClick="onClick"
+        android:onClick="onClick2"
         />
 
-    <ImageView
-        android:src="@drawable/ogre1"
-        android:layout_width="wrap_content"
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ogre"
-        android:layout_alignTop="@+id/text"
-        android:layout_centerHorizontal="true"
-        />
+        android:text="Give Up"
+        android:id="@+id/giveup"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attack Ogre"
+        android:id="@+id/attackogre"
+        android:onClick="onClick"
+        android:layout_above="@+id/giveup" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sneak Around"
+        android:id="@+id/sneakaround"
+        android:layout_gravity="bottom"
+        android:onClick="onClick"
+        android:layout_above="@+id/attackogre"/>
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text"
-        android:text="The ogre is sitting in front of this cave as if its guarding something (can pause and resume app)."
+        android:text="The ogre is sitting in front of this cave as if its guarding something."
         android:textColor="@color/white"
         android:textSize="16sp"
         android:layout_centerVertical="true"
-        android:paddingTop="210dp"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp"
+        android:background="@color/black"
+        android:layout_above="@id/sneakaround"/>
 
-    <Button
-        android:layout_width="match_parent"
+    <ImageView
+        android:src="@drawable/ogre1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sneak Around"
-        android:id="@+id/button1"
-        android:layout_gravity="bottom"
-        android:onClick="onClick"
-        android:layout_below="@+id/text"/>
+        android:id="@+id/ogre"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingTop="100dp"
+        android:layout_above="@id/text"
+        />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Attack Ogre"
-        android:id="@+id/button2"
-        android:onClick="onClick"
-        android:layout_below="@+id/button1" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Give Up"
-        android:id="@+id/button3"
-        android:onClick="onClick"
-        android:layout_below="@+id/button2" />
 </RelativeLayout>

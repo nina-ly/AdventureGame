@@ -13,21 +13,43 @@
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/gray"
-        android:text="You: What are you doing here?"/>
+        android:text="Well, I was hiding in your cart which obviously not a good idea. I am just trying to get home like you are. Should we travel together?"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_centerVertical="true"
+        android:paddingTop="250dp"
+        android:paddingBottom="10dp" />
+
+    <ImageButton
+        android:background="@drawable/blue_fairy"
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:id="@+id/hint"
+        android:layout_alignTop="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp" />
 
     <Button
         android:id="@+id/okButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ok" />
+        android:text="Ok"
+        android:onClick="onClick"
+        android:layout_below="@+id/text1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/startWalkingButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ignore and continue walking"/>
+        android:text="Ignore and continue walking"
+        android:onClick="onClick"
+        android:layout_below="@+id/okButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

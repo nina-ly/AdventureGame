@@ -4,27 +4,42 @@
     android:layout_height="match_parent"
     android:background="@drawable/forest" >
 
-    <!-- [Say ok] “Awesome thanks man if you ever need any help just tap on me! *goes into the top corner*
-    [Forked Road] -->
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray"
-        android:text="Awesome, thanks! If you need my help, just tap on me!"/>
+        android:text="Awesome, thanks! If you need my help, just tap on me!"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:paddingTop="250dp"
+        android:paddingBottom="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/helpFairyHint"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/blue_fairy"/>
+        android:onClick="onImageClick"
+        android:background="@drawable/blue_fairy"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        android:id="@+id/okButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/okButton2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ok"/>
+        android:onClick="onClick"
+        android:text="Ok"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="48dp" />
 
 
 </RelativeLayout>
