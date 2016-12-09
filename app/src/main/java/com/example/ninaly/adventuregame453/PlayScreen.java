@@ -124,14 +124,14 @@ public class PlayScreen extends Activity implements SensorEventListener{
 
     }
 
-    public void checkIfItsNight() {
+    public void checkIfItsNight() {//Kevin Nguyen
         int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         if(currentHour >= 18) {
             setContentView(R.layout.night);
         }
     }
 
-    public void onClick(View view) {
+    public void onClick(View view) {//Nina Ly
 //        SharedPreferences.Editor editor = progressData.edit();
 
 
@@ -403,7 +403,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
 //                gameover.putExtra("gameover", 7);
 //                startActivity(gameover);
 //                break;
-
+            //beginning of part 3 by Christian Gumacal
             case R.id.shoutLoud:
                 progress = R.layout.part3_shout;
                 break;
@@ -523,7 +523,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
         setContentView(progress);
     } //end onClick
 
-    public void onClickCave(View view){
+    public void onClickCave(View view){//Part 2 Cave by Kevin Nguyen
         switch(view.getId()){
             case R.id.ogrecave:
                 progress = R.layout.ogrecave;
@@ -705,7 +705,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
 
         ImageButton imageButtonClicked = (ImageButton) view;
 
-        switch (imageButtonClicked.getId()) {
+        switch (imageButtonClicked.getId()) {//hints for part 1 by Nina Ly
 
             case R.id.helpFairyHint:
                 Toast fairyHints = Toast.makeText(PlayScreen.this, "I will help us get home.", Toast.LENGTH_LONG);
@@ -829,7 +829,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
         } //end switch
     } //end onImageClick
 
-    public void onClick2(View view){
+    public void onClick2(View view){// hints for part 2 by Kevin Nguyen
         switch(view.getId()) {
             case R.id.hint1:
                 Toast toast = Toast.makeText(this, "I sense the presense of a vile being in one of the caves. ", Toast.LENGTH_LONG);
@@ -966,181 +966,186 @@ public class PlayScreen extends Activity implements SensorEventListener{
         }
     }
 
-    public void onClickHint(View view){
+    public void onClickHint(View view){// part 3 hints by Christian Gumacal
         Toast toast;
         switch(progress){
             case R.layout.part3_start:
-                toast = Toast.makeText(this, "Dang thats a big castle! be careful of that moat -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Dang thats a big castle! be careful of that moat", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_shout:
-                toast = Toast.makeText(this, "Seriously you tried to yell? just ring the door bell. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Seriously you tried to yell? just ring the door bell.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_doorbell_emerald:
-                toast = Toast.makeText(this, "Hey did't you find an emerald? why don't you show that to him?. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Hey did't you find an emerald? why don't you show that to him?", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_doorbell_sword:
-                toast = Toast.makeText(this, "Wow this guy is having a bad day... maybe you can help him with that sword of yours. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Wow this guy is having a bad day... maybe you can help him with that sword of yours", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_doorbell_other:
-                toast = Toast.makeText(this, "Wow maybe we should just leave? I guess theres no harm in asking for help though. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Wow maybe we should just leave? I guess theres no harm in asking for help though.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_moat:
-                toast = Toast.makeText(this, "Seriously did I not say be careful of the moat? no one ever listens to the fairy. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Seriously did I not say be careful of the moat? no one ever listens to the fairy.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_emerald:
-                toast = Toast.makeText(this, "See I told you he would listen. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "See I told you he would listen.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_sword:
-                toast = Toast.makeText(this, "See I told you he would listen. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "See I told you he would listen.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_threaten:
-                toast = Toast.makeText(this, "Why would you yell at the king!?. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Why would you yell at the king!?.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_walk:
-                toast = Toast.makeText(this, "This castle looks even bigger on the inside! oh theres the king better show some respect. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "This castle looks even bigger on the inside! oh theres the king better show some respect.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_greet:
-                toast = Toast.makeText(this, "Very nice, very nice. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Very nice, very nice.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_askhelp:
-                toast = Toast.makeText(this, "Wow the king needs our help! it would be rude not to at least hear him out. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Wow the king needs our help! it would be rude not to at least hear him out.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_listenevil:
-                toast = Toast.makeText(this, "Wow what a predicament, oh no whats that look in your eye? -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Wow what a predicament, oh no whats that look in your eye?", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_listengood:
-                toast = Toast.makeText(this, "Wow what a predicament, I bet we could help if we really try. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Wow what a predicament, I bet we could help if we really try.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_confidenthero:
-                toast = Toast.makeText(this, "Damn straight show him that you're the hero they need! -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Damn straight show him that you're the hero they need!", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_thinkhero1:
-                toast = Toast.makeText(this, "Cmon don't sell yourself short, I've seen you do some impressive stuff. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Cmon don't sell yourself short, I've seen you do some impressive stuff.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_evilhero:
-                toast = Toast.makeText(this, "of course... how'd I end up getting paired with this psycho. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "of course... how'd I end up getting paired with this psycho.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_ignore:
-                toast = Toast.makeText(this, "Wow you suck but I guess thats fine. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Wow you suck but I guess thats fine.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_attackgirl:
-                toast = Toast.makeText(this, "I told you she was strong and now youre dead. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "I told you she was strong and now youre dead.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_yield:
-                toast = Toast.makeText(this, "Smart choice! alright time to pick our magic. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Smart choice! alright time to pick our magic.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_aftermagic:
-                toast = Toast.makeText(this, "I sense the presense of a vile being in one of the caves. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "I sense the presense of a vile being in one of the caves.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_reward1:
-                toast = Toast.makeText(this, "Alright well at least you got a reward out of it. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Alright well at least you got a reward out of it.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_morereward:
-                toast = Toast.makeText(this, "Cmon don't get greedy. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Cmon don't get greedy.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_toomuchreward:
-                toast = Toast.makeText(this, "Holy dang! she killed you... shoulda listened when I said walk away. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Holy dang! she killed you... shoulda listened when I said walk away.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_endnomagic:
-                toast = Toast.makeText(this, "I sense the presense of a vile being in one of the caves. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "I sense the presense of a vile being in one of the caves.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_fightherevil:
-                toast = Toast.makeText(this, "Hey I know you're an evil badass and all but be careful she's strong. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "Hey I know you're an evil badass and all but be careful she's strong.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_redmagic:
-                toast = Toast.makeText(this, "This is very powerful against someone who is defending. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "This is very powerful against someone who is defending.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_greenmagic:
-                toast = Toast.makeText(this, "This is very powerful against an enemy's physical attacks. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "This is very powerful against an enemy's physical attacks.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_bluemagic:
-                toast = Toast.makeText(this, "this is very powerful against an enemy's magical attacks. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "this is very powerful against an enemy's magical attacks.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_fightherevil_d:
-                toast = Toast.makeText(this, "She must be scared but while she is defending we are at a stale mate. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "She must be scared but while she is defending we are at a stale mate.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_fightherevil_m:
-                toast = Toast.makeText(this, "She is readying a spell take advantage and attack. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "She is readying a spell take advantage and attack.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_fightherevil_p:
-                toast = Toast.makeText(this, "that looks strong but slow you should defend and counter!. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "that looks strong but slow you should defend and counter!.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_fight_d:
-                toast = Toast.makeText(this, "He must be scared but while he is defending we are at a stale mate. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "He must be scared but while he is defending we are at a stale mate.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_fight_m:
-                toast = Toast.makeText(this, "He is readying a spell take advantage and attack. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "He is readying a spell take advantage and attack.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
             case R.layout.part3_fight_p:
-                toast = Toast.makeText(this, "that looks strong but slow you should defend and counter!. -Fairy", Toast.LENGTH_LONG);
+                toast = Toast.makeText(this, "that looks strong but slow you should defend and counter!.", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
+                toast.show();
+                break;
+            case R.layout.part3_wizard_appears:
+                toast = Toast.makeText(this, "Be careful he seems strong!", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.RIGHT, 0, 110);
                 toast.show();
                 break;
@@ -1148,7 +1153,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
         }
     }
 
-    public void onClickFight(View view){
+    public void onClickFight(View view){//fight sequence by Christian Gumacal
         switch(progress){
             case R.layout.part3_fight_d:
             case R.layout.part3_fightherevil_d:
@@ -1259,7 +1264,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
         }
     }
 
-    void nextFight(){
+    void nextFight(){//next random sequence
         Random rand = new Random();
         int next = rand.nextInt(10);
 
@@ -1286,7 +1291,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
 
 
 
-    void checkDeath(){
+    void checkDeath(){//check death
         if(wizardHealth <= 0){
             points += 10;
             gameover = new Intent(PlayScreen.this, GameOver.class);
@@ -1313,13 +1318,13 @@ public class PlayScreen extends Activity implements SensorEventListener{
         }
     }
     
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(Configuration newConfig) {//orientation change for part 2 by Kevin
         super.onConfigurationChanged(newConfig);
         setContentView(R.layout.changeorientation); //add 5 points here
     }
 
     @Override
-    public void onSensorChanged(SensorEvent event) {
+    public void onSensorChanged(SensorEvent event) {//Shake sensors for part 2 and 3 used by Kevin and Christian 
         curTime = System.currentTimeMillis();
 
         if ((curTime - lastUpdate) > UPDATEPERIOD) {
