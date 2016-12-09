@@ -39,11 +39,16 @@ public class StartScreen extends Activity {
         SharedPreferences.Editor editor = points.edit();
 
         editor.putInt("points", 0);
-        editor.putInt("evil-points", 1);
-        editor.putBoolean("lantern", true);
-        editor.putBoolean("sword", true);
-        editor.putBoolean("emerald", true);
-        editor.putInt("part", 1);
+        editor.putInt("evilPoints", 0);
+        editor.putInt("player-health", 10);
+        editor.putInt("princess-health", 7);
+        editor.putInt("wizard-health", 10);
+        editor.putBoolean("lantern", false);
+        editor.putBoolean("sword", false);
+        editor.putBoolean("emerald", false);
+        editor.putBoolean("key", false);
+        editor.putBoolean("treasure", false);
+        editor.putString("magic", "none");
         editor.putInt("storyProgress", R.layout.part1_intro);
 
         editor.commit();

@@ -5,6 +5,7 @@ package com.example.ninaly.adventuregame453;
  */
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -27,6 +28,8 @@ import java.util.Random;
 
 public class PlayScreen extends Activity implements SensorEventListener{
 
+
+    public static final String Data = "Progress_Data";
     private boolean lantern, sword, emerald, key, treasure;
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
@@ -38,11 +41,26 @@ public class PlayScreen extends Activity implements SensorEventListener{
     private int points, evilPoints, progress, wizardHealth, princessHealth, playerHealth;
     private String magic;
     private MediaPlayer mp;
+    Intent gameover;
+    SharedPreferences progressData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cavebeginning);
+        progressData = getSharedPreferences(Data, 0);
+        points = progressData.getInt("points", 0);
+        evilPoints = progressData.getInt("evilPoints", 0);
+        progress = progressData.getInt("storyProgress", R.layout.part1_intro);
+        playerHealth = progressData.getInt("player-health", 0);
+        princessHealth = progressData.getInt("princess-health", 0);
+        wizardHealth = progressData.getInt("wizard-health", 0);
+        lantern = progressData.getBoolean("lantern", false);
+        sword = progressData.getBoolean("sword", false);
+        emerald = progressData.getBoolean("emerald", false);
+        key = progressData.getBoolean("key", false);
+        treasure = progressData.getBoolean("treasure", false);
+        magic = progressData.getString("magic", "none");
+        setContentView(progress);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         curTime = lastUpdate = (long) 0.0;
@@ -59,6 +77,20 @@ public class PlayScreen extends Activity implements SensorEventListener{
     @Override
     protected void onResume() {
         super.onResume();
+        progressData = getSharedPreferences(Data, 0);
+        points = progressData.getInt("points", 0);
+        evilPoints = progressData.getInt("evilPoints", 0);
+        progress = progressData.getInt("storyProgress", R.layout.part1_intro);
+        playerHealth = progressData.getInt("player-health", 0);
+        princessHealth = progressData.getInt("princess-health", 0);
+        wizardHealth = progressData.getInt("wizard-health", 0);
+        lantern = progressData.getBoolean("lantern", false);
+        sword = progressData.getBoolean("sword", false);
+        emerald = progressData.getBoolean("emerald", false);
+        key = progressData.getBoolean("key", false);
+        treasure = progressData.getBoolean("treasure", false);
+        magic = progressData.getString("magic", "none");
+        setContentView(progress);
         mp.start();
         mp.setLooping(true);
         mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
@@ -66,17 +98,21 @@ public class PlayScreen extends Activity implements SensorEventListener{
 
     @Override
     protected void onPause() {
+        SharedPreferences point = getSharedPreferences(Data,0);
+        SharedPreferences.Editor editor = point.edit();
 
-//        SharedPreferences.Editor editor = progressData.edit();
-//
-//        editor.putInt("points", points);
-//        editor.putInt("evil-points", evilPoints);
-//        editor.putBoolean("lantern", lantern);
-//        editor.putBoolean("sword", sword);
-//        editor.putBoolean("emerald", emerald);
-//        editor.putInt("storyProgress", progress);
-//
-//        editor.commit();
+        editor.putInt("points", points);
+        editor.putInt("evilPoints", evilPoints);
+        editor.putInt("player-health", playerHealth);
+        editor.putInt("princess-health", princessHealth);
+        editor.putInt("wizard-health", wizardHealth);
+        editor.putBoolean("lantern", lantern);
+        editor.putBoolean("sword", sword);
+        editor.putBoolean("emerald", emerald);
+        editor.putBoolean("key", key);
+        editor.putBoolean("treasure", treasure);
+        editor.putString("magic", magic);
+        editor.putInt("storyProgress", progress);
         super.onPause();
         mp.stop();
         mSensorManager.unregisterListener(this);
@@ -180,24 +216,29 @@ public class PlayScreen extends Activity implements SensorEventListener{
 
             // From part1_say_hello.xml (spanish xml)
             case R.id.attackHim:
-                evilPoints=+2;
+                evilPoints++;
+                points +=5;
                 progress = R.layout.part1_attack_goblin;
                 break;
 
             // From part1_say_hello.xml
             case R.id.yesHelp:
+                lantern = true;
+                points+=5;
                 progress = R.layout.part1_goblin_help;
                 break;
 
             // From part1_dark_path.xml
             case R.id.attackButton:
-                evilPoints=+2;
+                evilPoints++;
+                points +=5;
                 progress = R.layout.part1_attack_goblin;
                 break;
 
             // From part1_say_hello.xml
             case R.id.attackGoblin:
-                evilPoints=+2;
+                evilPoints++;
+                points +=5;
                 progress = R.layout.part1_attack_goblin;
                 break;
 
@@ -228,7 +269,9 @@ public class PlayScreen extends Activity implements SensorEventListener{
 
             // From part1_keep_looking.xml
             case R.id.keepLookingButton2:
-                progress = R.layout.part1_keep_looking_again;
+                gameover = new Intent(PlayScreen.this, GameOver.class);
+                gameover.putExtra("gameover", 1);
+                startActivity(gameover);
                 break;
 
             // From part1_keep_looking.xml
@@ -236,22 +279,22 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 progress = R.layout.part1_sword;
                 break;
 
-            // From part1_keep_looking_again.xml
-            case R.id.gameOver:
-                Intent gameover = new Intent(PlayScreen.this, GameOver.class);
-                gameover.putExtra("gameover", 7);
-                startActivity(gameover);
-                break;
-
-            // From part1_gameover.xml
-            case R.id.mainMenu:
-                progress = R.layout.activity_start_screen;
-                break;
-
-            case R.id.quitGame:
-                System.exit(0);
-
-                // From part1_goblin_help.xml
+//            // From part1_keep_looking_again.xml
+//            case R.id.gameOver:
+//                Intent gameover = new Intent(PlayScreen.this, GameOver.class);
+//                gameover.putExtra("gameover", 7);
+//                startActivity(gameover);
+//                break;
+//
+//            // From part1_gameover.xml
+//            case R.id.mainMenu:
+//                progress = R.layout.activity_start_screen;
+//                break;
+//
+//            case R.id.quitGame:
+//                System.exit(0);
+//
+//                // From part1_goblin_help.xml
             case R.id.swordHelpFromGoblin:
                 progress = R.layout.part1_sword;
                 break;
@@ -278,6 +321,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
 
             // From part1_read_inscription.xml
             case R.id.pullSword1:
+
                 progress = R.layout.part1_pull_sword2;
                 break;
 
@@ -323,6 +367,8 @@ public class PlayScreen extends Activity implements SensorEventListener{
             case R.id.takeTheSword:
 
                 if(evilPoints == 0) {
+                    sword = true;
+                    points +=5;
                     progress = R.layout.part1_leave_inscription;
                     break;
                 }
@@ -330,8 +376,10 @@ public class PlayScreen extends Activity implements SensorEventListener{
                     progress = R.layout.part1_punishment1;
                     break;
                 }
-                else if(evilPoints >= 2) {
-                    progress = R.layout.part1_punishment2;
+                else if(evilPoints == 2) {
+                    gameover = new Intent(PlayScreen.this, GameOver.class);
+                    gameover.putExtra("gameover", 2);
+                    startActivity(gameover);
                     break;
                 }
 
@@ -342,12 +390,12 @@ public class PlayScreen extends Activity implements SensorEventListener{
 
 
 
-            // From part1_punishment2.xml
-            case R.id.gameOverButton:
-                gameover = new Intent(PlayScreen.this, GameOver.class);
-                gameover.putExtra("gameover", 7);
-                startActivity(gameover);
-                break;
+//            // From part1_punishment2.xml
+//            case R.id.gameOverButton:
+//                gameover = new Intent(PlayScreen.this, GameOver.class);
+//                gameover.putExtra("gameover", 7);
+//                startActivity(gameover);
+//                break;
 
             case R.id.shoutLoud:
                 progress = R.layout.part3_shout;
@@ -487,13 +535,14 @@ public class PlayScreen extends Activity implements SensorEventListener{
                     progress = R.layout.attackogrewithsword;
                     setContentView(R.layout.attackogrewithsword);}
                 else {
-                    progress = R.layout.attackogrewithoutsword;
-                    setContentView(R.layout.attackogrewithoutsword);}
+                    gameover = new Intent(PlayScreen.this, GameOver.class);
+                    gameover.putExtra("gameover", 3);
+                    startActivity(gameover);}
                 break;
             case R.id.keepattacking:
-                progress = R.layout.keepattacking;
-                setContentView(R.layout.keepattacking);
-                checkIfItsNight();
+                gameover = new Intent(PlayScreen.this, GameOver.class);
+                gameover.putExtra("gameover", 3);
+                startActivity(gameover);
                 break;
             case R.id.giveup:
                 progress = R.layout.regularcave;
@@ -510,6 +559,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
             case R.id.takeit:
                 progress = R.layout.regularcave;
                 emerald = true;
+                points+=5;
                 setContentView(R.layout.regularcave);
                 break;
             case R.id.leaveit:
@@ -551,8 +601,9 @@ public class PlayScreen extends Activity implements SensorEventListener{
                     progress = R.layout.travelforwardwithlight;
                     setContentView(R.layout.travelforwardwithlight);}
                 else {
-                    progress = R.layout.travelforwardwithoutlight;
-                    setContentView(R.layout.travelforwardwithoutlight);}
+                    gameover = new Intent(PlayScreen.this, GameOver.class);
+                    gameover.putExtra("gameover", 5);
+                    startActivity(gameover);}
                 break;
             case R.id.run:
                 progress = R.layout.run;
@@ -561,11 +612,13 @@ public class PlayScreen extends Activity implements SensorEventListener{
             case R.id.rummage:
                 progress = R.layout.key;
                 setContentView(R.layout.key);
+                points+=5;
                 key = true;
                 break;
             case R.id.jump:
-                progress = R.layout.jump;
-                setContentView(R.layout.jump);
+                gameover = new Intent(PlayScreen.this, GameOver.class);
+                gameover.putExtra("gameover", 4);
+                startActivity(gameover);
                 break;
             case R.id.throwsword:
                 sword = false;
@@ -585,8 +638,9 @@ public class PlayScreen extends Activity implements SensorEventListener{
                     bkey.setEnabled(false);
                 break;
             case R.id.picklock:
-                progress = R.layout.picklock;
-                setContentView(R.layout.picklock);
+                gameover = new Intent(PlayScreen.this, GameOver.class);
+                gameover.putExtra("gameover", 6);
+                startActivity(gameover);
                 break;
             case R.id.usekey:
                 progress = R.layout.usekey;
@@ -600,7 +654,8 @@ public class PlayScreen extends Activity implements SensorEventListener{
                     break;
                 }
                 if(treasure == false && sword == true) {
-                    treasure = true; //add 5 points
+                    points+=5;
+                    treasure = true;
                     break;
                 }
                 if(sword == true && treasure == true) {
@@ -614,7 +669,7 @@ public class PlayScreen extends Activity implements SensorEventListener{
                 setContentView(progress);
                 break;
             case R.id.gameover:
-                Intent gameover = new Intent(PlayScreen.this, GameOver.class);
+                gameover = new Intent(PlayScreen.this, GameOver.class);
                 gameover.putExtra("gameover", 7);
                 startActivity(gameover);
                 setContentView(progress);
@@ -1211,18 +1266,18 @@ public class PlayScreen extends Activity implements SensorEventListener{
     void checkDeath(){
         if(wizardHealth <= 0){
             points += 10;
-            Intent gameover = new Intent(PlayScreen.this, GameOver.class);
+            gameover = new Intent(PlayScreen.this, GameOver.class);
             gameover.putExtra("gameover", 12);
             startActivity(gameover);
         }
         if(princessHealth <= 0){
             points += 10;
-            Intent gameover = new Intent(PlayScreen.this, GameOver.class);
+            gameover = new Intent(PlayScreen.this, GameOver.class);
             gameover.putExtra("gameover", 11);
             startActivity(gameover);
         }
         if(playerHealth <= 0){
-            Intent gameover = new Intent(PlayScreen.this, GameOver.class);
+            gameover = new Intent(PlayScreen.this, GameOver.class);
             if(wizardHealth < 10){
                 gameover.putExtra("gameover", 10);
             }else{
