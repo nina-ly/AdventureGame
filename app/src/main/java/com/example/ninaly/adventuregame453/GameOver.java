@@ -45,31 +45,37 @@ public class GameOver extends Activity {
         switch(death){
             case 1://goblins kill you
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.forest));
+                image.setImageDrawable(getResources().getDrawable(R.drawable.goblingo));
                 goDesc.setText("The goblins tear you and the fairy apart for killing their friend");
                 goPoints.setText("Points: " + points);
                 break;
             case 2://sword pubishment
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.forest_path));
+                image.setImageDrawable(getResources().getDrawable(R.drawable.swordgo));
                 goDesc.setText("Lightning rained down from the heavens and vaporized you and your evil heart!");
                 goPoints.setText("Points: " + points);
                 break;
             case 3://ogre kills you
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.ogrecave));
+                image.setImageDrawable(getResources().getDrawable(R.drawable.ogre3));
                 goDesc.setText("The ogre bashed your head in and that was that");
                 goPoints.setText("Points: " + points);
                 break;
             case 4://jump to your death
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.bridge));
+                image.setImageDrawable(null);
                 goDesc.setText("You fall to the bottom of the pit and leave a giant red stain");
                 goPoints.setText("Points: " + points);
                 break;
             case 5://eaten by bugs
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.ogrecave2));
+                image.setImageDrawable(getResources().getDrawable(R.drawable.bones));
                 goDesc.setText("You feel a couple of bugs crawling up your legs... then a lot.. they eat your flesh and leave nothing but bone behind");
                 goPoints.setText("Points: " + points);
                 break;
             case 6://trapped in the cave
                 layout.setBackgroundDrawable(getResources().getDrawable(R.drawable.door));
+                image.setImageDrawable(getResources().getDrawable(R.drawable.bones));
                 goDesc.setText("The bridge has fallen down behind you and you're trapped forever!");
                 goPoints.setText("Points: " + points);
                 break;
