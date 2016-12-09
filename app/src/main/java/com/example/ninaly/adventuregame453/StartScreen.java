@@ -3,6 +3,7 @@ package com.example.ninaly.adventuregame453;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -10,14 +11,34 @@ import android.widget.Toast;
 public class StartScreen extends Activity {
 
     public static final String progressData = "Progress_Data";
+    private MediaPlayer mp;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
+        mp = MediaPlayer.create(this, R.raw.instrumental);
+        mp.start();
     }
 
+    @Override
+    protected void onPause() {
+        mp.stop();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        mp.start();
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mp.stop();
+        super.onDestroy();
+    }
     public void onNewGameClick(View view){
         SharedPreferences points = getSharedPreferences(progressData, 0);
         SharedPreferences.Editor editor = points.edit();
